@@ -1,0 +1,14 @@
+{
+  "last_pushed_at": "2026-07-15T11:43:31",
+  "analysis": {
+    "technologies": [
+      "JavaScript"
+    ],
+    "architecture_overview": "&bull; Description: A production-quality, high-performance Fruit Ninja-inspired game built using HTML5 Canvas, Phaser 3, and MediaPipe Hands. 1. On the main menu, click or hover over the \ud83d\udcf7 CAM: OFF button in the top-right. \n &bull; Frontend: Not detected \n &bull; Backend: Not detected \n &bull; Database: Not detected \n &bull; Main Data Flow: Not detected",
+    "key_components": [],
+    "api_surface": [],
+    "code_patterns": [],
+    "integration_points": [],
+    "dependencies": []
+  }
+}

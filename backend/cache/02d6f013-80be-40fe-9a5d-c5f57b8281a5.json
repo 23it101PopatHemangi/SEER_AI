@@ -1,0 +1,63 @@
+{
+  "last_pushed_at": "2026-08-17T07:00:18",
+  "analysis": {
+    "technologies": [
+      "Express.js",
+      "GitHub Actions",
+      "React",
+      "TypeScript",
+      "Vite",
+      "Webpack"
+    ],
+    "architecture_overview": "&bull; Description: on Github. This might not look right in other Markdown previewers. --> A payment application to demonstrate <strong>real-world</strong> usage of <a href=\"https://cypress.io\">Cypress</a> testing methods, patterns, and workflows. \n &bull; Frontend: React SPA \n &bull; Backend: Express.js API Router \n &bull; Database: Not detected \n &bull; Authentication: Okta Single Sign-On \n &bull; Main Data Flow: Asynchronous HTTP REST API flow: Client actions trigger router components in the React SPA frontend, which communicate via standard endpoints with the Express.js API Router backend service. The backend queries database rows and redirects responses.",
+    "key_components": [
+      "src/components/AlertBar.cy.tsx (Visual Component interface)",
+      "src/components/AlertBar.tsx (Visual Component interface)",
+      "src/components/BankAccountForm.tsx (Visual Component interface)",
+      "src/components/BankAccountItem.tsx (Visual Component interface)",
+      "src/components/BankAccountList.tsx (Visual Component interface)",
+      "src/components/CommentForm.tsx (Visual Component interface)",
+      "src/components/CommentList.tsx (Visual Component interface)",
+      "src/components/CommentListItem.tsx (Visual Component interface)"
+    ],
+    "api_surface": [
+      "Route: /* (Frontend)",
+      "Route: /signin (Frontend)",
+      "Route: /signup (Frontend)",
+      "Route: types.ts (Frontend)"
+    ],
+    "code_patterns": [
+      "Interweaving Request Middleware Interceptor"
+    ],
+    "integration_points": [
+      "Okta SSO Authentication"
+    ],
+    "dependencies": [
+      "@auth0/auth0-react",
+      "@babel/core",
+      "@babel/plugin-proposal-private-property-in-object",
+      "@babel/plugin-syntax-flow",
+      "@babel/plugin-transform-react-jsx",
+      "@babel/preset-env",
+      "@cypress/code-coverage",
+      "@cypress/instrument-cra",
+      "@emotion/react",
+      "@emotion/styled",
+      "@eslint/js",
+      "@faker-js/faker",
+      "@graphql-tools/graphql-file-loader",
+      "@graphql-tools/load",
+      "@matheusluizn/react-google-login",
+      "@mui/icons-material",
+      "@mui/lab",
+      "@mui/material",
+      "@okta/jwt-verifier",
+      "@okta/okta-auth-js",
+      "@okta/okta-react",
+      "@percy/cli",
+      "@percy/cypress",
+      "@testing-library/jest-dom",
+      "@testing-library/react"
+    ]
+  }
+}

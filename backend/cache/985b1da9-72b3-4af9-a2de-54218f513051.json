@@ -1,0 +1,14 @@
+{
+  "last_pushed_at": "2026-05-07T06:13:30",
+  "analysis": {
+    "technologies": [
+      "Java/Kotlin"
+    ],
+    "architecture_overview": "&bull; Description: A premium, production-ready Flutter mobile app for travel itinerary planning and expense splitting with offline-first support.  \n &bull; Frontend: Not detected \n &bull; Backend: Not detected \n &bull; Database: Not detected \n &bull; Main Data Flow: Not detected",
+    "key_components": [],
+    "api_surface": [],
+    "code_patterns": [],
+    "integration_points": [],
+    "dependencies": []
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "last_pushed_at": "2026-04-09T07:06:29",
+  "analysis": {
+    "technologies": [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "TypeScript"
+    ],
+    "architecture_overview": "&bull; Description: \u2728 A premium, responsive, and interactive calendar experience inspired by a physical wall calendar, built with modern frontend technologies. \ud83d\udc49 \ud83d\udd25 Live Demo: https://wall-calender-mu.vercel.app/ \n &bull; Frontend: Next.js SSR Frontend \n &bull; Backend: Not detected \n &bull; Database: Not detected \n &bull; Main Data Flow: Single Page client-rendered flow managed by Next.js SSR Frontend views.",
+    "key_components": [
+      "src/components/Calendar.tsx (Visual Component interface)",
+      "src/components/DateCell.tsx (Visual Component interface)",
+      "src/components/HeroMonthImage.tsx (Visual Component interface)",
+      "src/components/Notes.tsx (Visual Component interface)"
+    ],
+    "api_surface": [],
+    "code_patterns": [
+      "React Functional Component Lifecycle Hooks"
+    ],
+    "integration_points": [],
+    "dependencies": [
+      "@tailwindcss/postcss",
+      "@types/node",
+      "@types/react",
+      "@types/react-dom",
+      "babel-plugin-react-compiler",
+      "eslint",
+      "eslint-config-next",
+      "next",
+      "react",
+      "react-dom",
+      "tailwindcss",
+      "typescript"
+    ]
+  }
+}

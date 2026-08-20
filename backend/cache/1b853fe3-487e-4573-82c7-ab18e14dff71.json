@@ -1,0 +1,2254 @@
+{
+  "last_pushed_at": "2026-06-29T16:10:29",
+  "analysis": {
+    "overview": "A modern full-stack template using React (with Vite), Node.js (Express), and PostgreSQL, all containerized with Docker. The frontend will be available at http://localhost:3000. Key features include Frontend, Backend, Database, Containerization, Development Tools, and Quick Start.",
+    "technologies": [
+      "JavaScript",
+      "CSS",
+      "HTML",
+      "Express.js",
+      "React",
+      "Tailwind CSS",
+      "Vite"
+    ],
+    "architecture_overview": "- **Repository Purpose**: A modern full-stack template using React (with Vite), Node.js (Express), and PostgreSQL, all containerized with Docker. The frontend will be available at http://localhost:3000. Key features include Frontend, Backend, Database, Containerization, Development Tools, and Quick Start.\n- **Frontend Tier**: React SPA\n- **Backend Tier**: Express.js API Router\n- **Database Tier**: Not detected\n- **System Data Flow**: Asynchronous HTTP REST API flow: Client actions trigger router components in the React SPA frontend, which communicate via standard endpoints with the Express.js API Router backend service. The backend queries database rows and redirects responses.",
+    "key_components": [
+      "backend/src/db/connect.js (Data Entity & Model)",
+      "backend/src/index.js (Core Application Entrypoint)"
+    ],
+    "key_components_details": [
+      {
+        "path": "backend/src/index.js",
+        "name": "Index",
+        "role": "Core Application Entrypoint",
+        "purpose": "Main application entrypoint and initialization module in backend/src/index.js.",
+        "relationships": [
+          "backend/src"
+        ]
+      },
+      {
+        "path": "backend/src/db/connect.js",
+        "name": "Connect",
+        "role": "Data Entity & Model",
+        "purpose": "Defines data structure schemas and persistence mapping in backend/src/db/connect.js.",
+        "relationships": [
+          "backend/src/db"
+        ]
+      }
+    ],
+    "api_surface": [
+      "None detected"
+    ],
+    "api_surface_details": [],
+    "code_patterns": [
+      "Centralized Exception Guarding",
+      "Non-blocking Asynchronous I/O",
+      "React Hooks Component Lifecycle"
+    ],
+    "code_patterns_details": [
+      {
+        "pattern_name": "Functional State & Lifecycle Management",
+        "category": "State Management",
+        "description": "Uses React functional hooks (useState, useEffect, useContext) for local and global state handling.",
+        "source_files": [
+          "frontend/src/App.jsx"
+        ],
+        "reusable_approach": "Encapsulates reactive view logic inside functional components."
+      },
+      {
+        "pattern_name": "Asynchronous Non-blocking Execution",
+        "category": "Concurrency & I/O",
+        "description": "Utilizes async/await futures and non-blocking I/O operations for REST requests and database operations.",
+        "source_files": [
+          "frontend/eslint.config.js",
+          "frontend/vite.config.js",
+          "scripts/setup.js",
+          "backend/src/index.js"
+        ],
+        "reusable_approach": "Prevents event-loop blocking during network and disk operations."
+      },
+      {
+        "pattern_name": "Structured Exception Guarding",
+        "category": "Error Handling",
+        "description": "Wraps external API communications and database sessions in try/except guards returning standard error payloads.",
+        "source_files": [
+          "frontend/eslint.config.js",
+          "frontend/vite.config.js",
+          "scripts/setup.js",
+          "backend/src/index.js",
+          "frontend/src/App.jsx"
+        ],
+        "reusable_approach": "Ensures clean status codes and structured diagnostic error messages."
+      }
+    ],
+    "integration_points": [
+      "Docker Container Runtime Engine",
+      "Docker-Compose Service Orchestrator",
+      "GitHub Actions CI/CD Pipeline"
+    ],
+    "integration_points_details": [
+      {
+        "service_name": "Docker Engine",
+        "integration_type": "Containerization & Runtime",
+        "direction": "Outbound",
+        "file_config": "Dockerfile",
+        "purpose": "Package application logic into reproducible container runtime images."
+      },
+      {
+        "service_name": "Docker Compose",
+        "integration_type": "Container Orchestration",
+        "direction": "Bi-directional",
+        "file_config": "docker-compose.yml",
+        "purpose": "Orchestrates multi-container development environment services."
+      },
+      {
+        "service_name": "GitHub Actions",
+        "integration_type": "CI/CD Automation",
+        "direction": "Outbound",
+        "file_config": ".github/workflows",
+        "purpose": "Automated build, test, and continuous integration workflows."
+      }
+    ],
+    "dependencies": [
+      "@eslint/js",
+      "@tailwindcss/vite",
+      "@types/react",
+      "@types/react-dom",
+      "@vitejs/plugin-react",
+      "axios",
+      "concurrently",
+      "cors",
+      "dotenv",
+      "eslint",
+      "eslint-plugin-react-hooks",
+      "eslint-plugin-react-refresh",
+      "express",
+      "globals",
+      "pg",
+      "react",
+      "react-dom",
+      "tailwindcss",
+      "vite"
+    ],
+    "dependencies_details": [
+      {
+        "package": "concurrently",
+        "version": "^9.1.2",
+        "ecosystem": "npm",
+        "purpose": "JavaScript/TypeScript package dependency",
+        "relationships": "package.json"
+      },
+      {
+        "package": "cors",
+        "version": "^2.8.5",
+        "ecosystem": "npm",
+        "purpose": "JavaScript/TypeScript package dependency",
+        "relationships": "backend/package.json"
+      },
+      {
+        "package": "dotenv",
+        "version": "^16.5.0",
+        "ecosystem": "npm",
+        "purpose": "JavaScript/TypeScript package dependency",
+        "relationships": "backend/package.json"
+      },
+      {
+        "package": "express",
+        "version": "^5.1.0",
+        "ecosystem": "npm",
+        "purpose": "Node.js REST API router framework",
+        "relationships": "backend/package.json"
+      },
+      {
+        "package": "pg",
+        "version": "^8.16.0",
+        "ecosystem": "npm",
+        "purpose": "JavaScript/TypeScript package dependency",
+        "relationships": "backend/package.json"
+      },
+      {
+        "package": "eslint",
+        "version": "^9.27.0",
+        "ecosystem": "npm",
+        "purpose": "JavaScript/TypeScript package dependency",
+        "relationships": "backend/package.json"
+      },
+      {
+        "package": "@tailwindcss/vite",
+        "version": "^4.1.7",
+        "ecosystem": "npm",
+        "purpose": "Next-generation frontend tooling bundler",
+        "relationships": "frontend/package.json"
+      },
+      {
+        "package": "axios",
+        "version": "^1.9.0",
+        "ecosystem": "npm",
+        "purpose": "JavaScript/TypeScript package dependency",
+        "relationships": "frontend/package.json"
+      },
+      {
+        "package": "react",
+        "version": "^19.1.0",
+        "ecosystem": "npm",
+        "purpose": "Frontend UI library for component views",
+        "relationships": "frontend/package.json"
+      },
+      {
+        "package": "react-dom",
+        "version": "^19.1.0",
+        "ecosystem": "npm",
+        "purpose": "Frontend UI library for component views",
+        "relationships": "frontend/package.json"
+      },
+      {
+        "package": "tailwindcss",
+        "version": "^4.1.7",
+        "ecosystem": "npm",
+        "purpose": "Utility-first CSS styling framework",
+        "relationships": "frontend/package.json"
+      },
+      {
+        "package": "@eslint/js",
+        "version": "^9.25.0",
+        "ecosystem": "npm",
+        "purpose": "JavaScript/TypeScript package dependency",
+        "relationships": "frontend/package.json"
+      },
+      {
+        "package": "@types/react",
+        "version": "^19.1.2",
+        "ecosystem": "npm",
+        "purpose": "Frontend UI library for component views",
+        "relationships": "frontend/package.json"
+      },
+      {
+        "package": "@types/react-dom",
+        "version": "^19.1.2",
+        "ecosystem": "npm",
+        "purpose": "Frontend UI library for component views",
+        "relationships": "frontend/package.json"
+      },
+      {
+        "package": "@vitejs/plugin-react",
+        "version": "^4.4.1",
+        "ecosystem": "npm",
+        "purpose": "Frontend UI library for component views",
+        "relationships": "frontend/package.json"
+      },
+      {
+        "package": "eslint-plugin-react-hooks",
+        "version": "^5.2.0",
+        "ecosystem": "npm",
+        "purpose": "Frontend UI library for component views",
+        "relationships": "frontend/package.json"
+      },
+      {
+        "package": "eslint-plugin-react-refresh",
+        "version": "^0.4.19",
+        "ecosystem": "npm",
+        "purpose": "Frontend UI library for component views",
+        "relationships": "frontend/package.json"
+      },
+      {
+        "package": "globals",
+        "version": "^16.0.0",
+        "ecosystem": "npm",
+        "purpose": "JavaScript/TypeScript package dependency",
+        "relationships": "frontend/package.json"
+      },
+      {
+        "package": "vite",
+        "version": "^6.3.5",
+        "ecosystem": "npm",
+        "purpose": "Next-generation frontend tooling bundler",
+        "relationships": "frontend/package.json"
+      }
+    ],
+    "build_deployment_config": [
+      "Vite Bundler"
+    ],
+    "database_technologies": [],
+    "external_services": [],
+    "readme_insights": {
+      "has_readme": true,
+      "summary": "A modern full-stack template using React (with Vite), Node.js (Express), and PostgreSQL, all containerized with Docker. The frontend will be available at http://localhost:3000. Key features include Frontend, Backend, Database, Containerization, Development Tools, and Quick Start.",
+      "sections": [
+        "Full-Stack React + Node.js + PostgreSQL Template",
+        "Features",
+        "Quick Start",
+        "Prerequisites",
+        "One-Command Setup",
+        "Clone the repository",
+        "Run the setup script",
+        "Manual Setup"
+      ]
+    }
+  },
+  "cache_version": 4,
+  "languages": {
+    "JavaScript": 86.3,
+    "CSS": 8.3,
+    "HTML": 5.3
+  },
+  "file_structure": [
+    {
+      "path": ".gitignore",
+      "type": "blob"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "type": "blob"
+    },
+    {
+      "path": "README.md",
+      "type": "blob"
+    },
+    {
+      "path": "docker-compose.prod.yml",
+      "type": "blob"
+    },
+    {
+      "path": "docker-compose.yml",
+      "type": "blob"
+    },
+    {
+      "path": "package.json",
+      "type": "blob"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "type": "blob"
+    },
+    {
+      "path": "pnpm-workspace.yaml",
+      "type": "blob"
+    },
+    {
+      "path": ".github/dependabot.yml",
+      "type": "blob"
+    },
+    {
+      "path": "backend/.env.example",
+      "type": "blob"
+    },
+    {
+      "path": "backend/.gitignore",
+      "type": "blob"
+    },
+    {
+      "path": "backend/Dockerfile",
+      "type": "blob"
+    },
+    {
+      "path": "backend/package-lock.json",
+      "type": "blob"
+    },
+    {
+      "path": "backend/package.json",
+      "type": "blob"
+    },
+    {
+      "path": "frontend/.gitignore",
+      "type": "blob"
+    },
+    {
+      "path": "frontend/Dockerfile",
+      "type": "blob"
+    },
+    {
+      "path": "frontend/README.md",
+      "type": "blob"
+    },
+    {
+      "path": "frontend/eslint.config.js",
+      "type": "blob"
+    },
+    {
+      "path": "frontend/index.html",
+      "type": "blob"
+    },
+    {
+      "path": "frontend/nginx.conf",
+      "type": "blob"
+    },
+    {
+      "path": "frontend/package-lock.json",
+      "type": "blob"
+    },
+    {
+      "path": "frontend/package.json",
+      "type": "blob"
+    },
+    {
+      "path": "frontend/vite.config.js",
+      "type": "blob"
+    },
+    {
+      "path": "scripts/setup.js",
+      "type": "blob"
+    },
+    {
+      "path": ".github/workflows/cd.yml",
+      "type": "blob"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "type": "blob"
+    },
+    {
+      "path": "backend/src/index.js",
+      "type": "blob"
+    },
+    {
+      "path": "frontend/public/vite.svg",
+      "type": "blob"
+    },
+    {
+      "path": "frontend/src/App.css",
+      "type": "blob"
+    },
+    {
+      "path": "frontend/src/App.jsx",
+      "type": "blob"
+    },
+    {
+      "path": "frontend/src/index.css",
+      "type": "blob"
+    },
+    {
+      "path": "frontend/src/main.jsx",
+      "type": "blob"
+    },
+    {
+      "path": "backend/src/db/connect.js",
+      "type": "blob"
+    }
+  ],
+  "commits": [
+    {
+      "sha": "18373972bf",
+      "message": "feat: add Docker setup for frontend and configure Nginx for API proxying",
+      "author": "Jefino9488",
+      "date": "2025-05-22T17:24:26Z"
+    },
+    {
+      "sha": "2e042561bf",
+      "message": "Merge pull request #3 from Jefino9488/dependabot/docker/backend/node-24",
+      "author": "Jefino9488",
+      "date": "2025-05-22T17:21:23Z"
+    },
+    {
+      "sha": "204e91d8f5",
+      "message": "Merge pull request #2 from Jefino9488/dependabot/npm_and_yarn/concurr\u2026",
+      "author": "Jefino9488",
+      "date": "2025-05-22T17:21:09Z"
+    },
+    {
+      "sha": "9421b7dd96",
+      "message": "Merge pull request #1 from Jefino9488/dependabot/github_actions/docke\u2026",
+      "author": "Jefino9488",
+      "date": "2025-05-22T17:20:54Z"
+    },
+    {
+      "sha": "7e18ece258",
+      "message": "docker(deps): bump node from 18 to 24 in /backend",
+      "author": "dependabot",
+      "date": "2025-05-22T17:19:51Z"
+    },
+    {
+      "sha": "ac1db4157a",
+      "message": "npm(deps-dev): bump concurrently from 8.2.2 to 9.1.2",
+      "author": "dependabot",
+      "date": "2025-05-22T17:17:14Z"
+    },
+    {
+      "sha": "f6c45b955c",
+      "message": "github-actions(deps): bump docker/build-push-action from 5 to 6",
+      "author": "dependabot",
+      "date": "2025-05-22T17:16:57Z"
+    },
+    {
+      "sha": "a7a8fc58d6",
+      "message": "add project setup files and scripts for full-stack template with Reac\u2026",
+      "author": "Jefino9488",
+      "date": "2025-05-22T17:16:09Z"
+    },
+    {
+      "sha": "bb8e1f0417",
+      "message": "initialize project with React, Vite, and Node.js backend setup",
+      "author": "Jefino9488",
+      "date": "2025-05-22T09:22:30Z"
+    }
+  ],
+  "total_commits": 9,
+  "branches": [],
+  "contributors": [],
+  "issues": [],
+  "pull_requests": [
+    {
+      "number": 212,
+      "title": "npm(deps): bump the production-dependencies group across 1 directory with 7 updates",
+      "state": "open",
+      "author": "dependabot[bot]",
+      "created_at": "2026-08-03T14:25:32Z",
+      "updated_at": "2026-08-03T14:25:32Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/212",
+      "labels": []
+    },
+    {
+      "number": 211,
+      "title": "github-actions(deps): bump pnpm/action-setup from 5 to 6.0.9",
+      "state": "open",
+      "author": "dependabot[bot]",
+      "created_at": "2026-08-03T14:23:55Z",
+      "updated_at": "2026-08-03T14:23:55Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/211",
+      "labels": []
+    },
+    {
+      "number": 209,
+      "title": "npm(deps): bump the production-dependencies group across 1 directory with 3 updates",
+      "state": "open",
+      "author": "dependabot[bot]",
+      "created_at": "2026-07-20T14:25:30Z",
+      "updated_at": "2026-07-20T14:25:30Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/209",
+      "labels": []
+    },
+    {
+      "number": 208,
+      "title": "github-actions(deps): bump actions/setup-node from 6 to 7",
+      "state": "open",
+      "author": "dependabot[bot]",
+      "created_at": "2026-07-20T14:24:05Z",
+      "updated_at": "2026-07-20T14:24:05Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/208",
+      "labels": []
+    },
+    {
+      "number": 206,
+      "title": "npm(deps-dev): bump happy-dom from 20.8.4 to 20.10.6",
+      "state": "open",
+      "author": "dependabot[bot]",
+      "created_at": "2026-07-06T14:27:32Z",
+      "updated_at": "2026-07-06T14:27:32Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/206",
+      "labels": []
+    },
+    {
+      "number": 205,
+      "title": "npm(deps-dev): bump @vitejs/plugin-react from 5.1.1 to 6.0.3 in /frontend",
+      "state": "open",
+      "author": "dependabot[bot]",
+      "created_at": "2026-07-06T14:26:48Z",
+      "updated_at": "2026-07-06T14:26:48Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/205",
+      "labels": []
+    },
+    {
+      "number": 204,
+      "title": "npm(deps-dev): bump eslint from 9.39.2 to 10.6.0",
+      "state": "open",
+      "author": "dependabot[bot]",
+      "created_at": "2026-07-06T14:26:43Z",
+      "updated_at": "2026-07-06T14:26:43Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/204",
+      "labels": []
+    },
+    {
+      "number": 203,
+      "title": "npm(deps-dev): bump vite from 7.2.2 to 8.1.3 in /frontend",
+      "state": "open",
+      "author": "dependabot[bot]",
+      "created_at": "2026-07-06T14:26:26Z",
+      "updated_at": "2026-07-06T14:26:26Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/203",
+      "labels": []
+    },
+    {
+      "number": 202,
+      "title": "npm(deps-dev): bump globals from 16.5.0 to 17.7.0 in /frontend",
+      "state": "open",
+      "author": "dependabot[bot]",
+      "created_at": "2026-07-06T14:26:05Z",
+      "updated_at": "2026-07-06T14:26:05Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/202",
+      "labels": []
+    },
+    {
+      "number": 200,
+      "title": "npm(deps-dev): bump globals from 17.5.0 to 17.7.0",
+      "state": "open",
+      "author": "dependabot[bot]",
+      "created_at": "2026-07-06T14:25:52Z",
+      "updated_at": "2026-07-06T14:25:52Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/200",
+      "labels": []
+    },
+    {
+      "number": 199,
+      "title": "npm(deps-dev): bump vitest from 2.1.9 to 4.1.10 in /backend",
+      "state": "open",
+      "author": "dependabot[bot]",
+      "created_at": "2026-07-06T14:25:46Z",
+      "updated_at": "2026-07-06T14:25:46Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/199",
+      "labels": []
+    },
+    {
+      "number": 197,
+      "title": "npm(deps-dev): bump vite from 8.0.3 to 8.1.3",
+      "state": "open",
+      "author": "dependabot[bot]",
+      "created_at": "2026-07-06T14:24:24Z",
+      "updated_at": "2026-07-06T14:24:24Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/197",
+      "labels": []
+    },
+    {
+      "number": 195,
+      "title": "npm(deps-dev): bump the dev-dependencies group across 1 directory with 2 updates",
+      "state": "open",
+      "author": "dependabot[bot]",
+      "created_at": "2026-06-15T14:26:58Z",
+      "updated_at": "2026-06-15T14:26:58Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/195",
+      "labels": []
+    },
+    {
+      "number": 192,
+      "title": "npm(deps-dev): bump jsdom from 29.0.1 to 29.1.1",
+      "state": "open",
+      "author": "dependabot[bot]",
+      "created_at": "2026-06-02T19:12:34Z",
+      "updated_at": "2026-06-02T19:12:34Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/192",
+      "labels": []
+    },
+    {
+      "number": 188,
+      "title": "docker(deps): bump node from 25-alpine to 26-alpine in /backend",
+      "state": "open",
+      "author": "dependabot[bot]",
+      "created_at": "2026-06-02T19:10:16Z",
+      "updated_at": "2026-06-02T19:10:16Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/188",
+      "labels": []
+    },
+    {
+      "number": 122,
+      "title": "npm(deps-dev): bump eslint from 9.39.2 to 10.0.0",
+      "state": "open",
+      "author": "dependabot[bot]",
+      "created_at": "2026-02-09T16:24:37Z",
+      "updated_at": "2026-02-09T16:24:37Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/122",
+      "labels": []
+    },
+    {
+      "number": 121,
+      "title": "npm(deps-dev): bump @types/react from 19.2.9 to 19.2.13",
+      "state": "open",
+      "author": "dependabot[bot]",
+      "created_at": "2026-02-09T16:24:30Z",
+      "updated_at": "2026-02-09T16:24:30Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/121",
+      "labels": []
+    },
+    {
+      "number": 120,
+      "title": "npm(deps): bump dotenv from 17.2.3 to 17.2.4",
+      "state": "open",
+      "author": "dependabot[bot]",
+      "created_at": "2026-02-09T16:23:38Z",
+      "updated_at": "2026-02-09T16:23:38Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/120",
+      "labels": []
+    },
+    {
+      "number": 118,
+      "title": "npm(deps-dev): bump @vitejs/plugin-react from 5.1.2 to 5.1.3",
+      "state": "open",
+      "author": "dependabot[bot]",
+      "created_at": "2026-02-09T16:22:42Z",
+      "updated_at": "2026-02-09T16:22:42Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/118",
+      "labels": []
+    },
+    {
+      "number": 117,
+      "title": "npm(deps-dev): bump jsdom from 27.4.0 to 28.0.0",
+      "state": "open",
+      "author": "dependabot[bot]",
+      "created_at": "2026-02-09T16:22:29Z",
+      "updated_at": "2026-02-09T16:22:29Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/117",
+      "labels": []
+    },
+    {
+      "number": 116,
+      "title": "npm(deps-dev): bump @eslint/js from 9.39.2 to 10.0.1",
+      "state": "open",
+      "author": "dependabot[bot]",
+      "created_at": "2026-02-09T16:22:17Z",
+      "updated_at": "2026-02-09T16:22:17Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/116",
+      "labels": []
+    },
+    {
+      "number": 114,
+      "title": "npm(deps): bump axios from 1.13.3 to 1.13.5",
+      "state": "open",
+      "author": "dependabot[bot]",
+      "created_at": "2026-02-09T16:22:06Z",
+      "updated_at": "2026-02-09T16:22:06Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/114",
+      "labels": []
+    },
+    {
+      "number": 210,
+      "title": "npm(deps): bump the production-dependencies group across 1 directory with 6 updates",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-08-03T14:25:09Z",
+      "updated_at": "2026-08-03T14:25:09Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/210",
+      "labels": []
+    },
+    {
+      "number": 207,
+      "title": "npm(deps): bump the production-dependencies group across 1 directory with 2 updates",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-07-20T14:25:23Z",
+      "updated_at": "2026-07-20T14:25:23Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/207",
+      "labels": []
+    },
+    {
+      "number": 201,
+      "title": "npm(deps): bump the production-dependencies group in /frontend with 5 updates",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-07-27T14:24:58Z",
+      "updated_at": "2026-07-27T14:24:58Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/201",
+      "labels": []
+    },
+    {
+      "number": 198,
+      "title": "npm(deps): bump pg from 8.16.3 to 8.22.0 in /backend in the production-dependencies group",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-07-13T14:25:13Z",
+      "updated_at": "2026-07-13T14:25:13Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/198",
+      "labels": []
+    },
+    {
+      "number": 196,
+      "title": "github-actions(deps): bump actions/checkout from 6 to 7",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-06-29T16:09:52Z",
+      "updated_at": "2026-06-29T16:09:52Z",
+      "merged_at": "2026-06-29T16:09:52Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/196",
+      "labels": []
+    },
+    {
+      "number": 194,
+      "title": "npm(deps-dev): bump vitest from 2.1.9 to 4.1.9 in /backend",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-07-06T14:25:49Z",
+      "updated_at": "2026-07-06T14:25:49Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/194",
+      "labels": []
+    },
+    {
+      "number": 193,
+      "title": "npm(deps-dev): bump eslint from 9.39.2 to 10.6.0",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-07-06T14:26:46Z",
+      "updated_at": "2026-07-06T14:26:46Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/193",
+      "labels": []
+    },
+    {
+      "number": 191,
+      "title": "npm(deps): bump the production-dependencies group across 1 directory with 5 updates",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-06-29T16:09:21Z",
+      "updated_at": "2026-06-29T16:09:21Z",
+      "merged_at": "2026-06-29T16:09:21Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/191",
+      "labels": []
+    },
+    {
+      "number": 190,
+      "title": "npm(deps-dev): bump vitest from 2.1.9 to 4.1.8 in /backend",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-06-15T14:25:59Z",
+      "updated_at": "2026-06-15T14:25:59Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/190",
+      "labels": []
+    },
+    {
+      "number": 189,
+      "title": "npm(deps-dev): bump globals from 17.5.0 to 17.7.0",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-07-06T14:25:55Z",
+      "updated_at": "2026-07-06T14:25:55Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/189",
+      "labels": []
+    },
+    {
+      "number": 187,
+      "title": "npm(deps): bump the production-dependencies group across 1 directory with 4 updates",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-06-02T19:11:43Z",
+      "updated_at": "2026-06-02T19:11:43Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/187",
+      "labels": []
+    },
+    {
+      "number": 186,
+      "title": "npm(deps-dev): bump vitest from 2.1.9 to 4.1.7 in /backend",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-06-02T19:11:05Z",
+      "updated_at": "2026-06-02T19:11:05Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/186",
+      "labels": []
+    },
+    {
+      "number": 185,
+      "title": "npm(deps): bump the production-dependencies group across 1 directory with 3 updates",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-05-25T20:38:58Z",
+      "updated_at": "2026-05-25T20:38:58Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/185",
+      "labels": []
+    },
+    {
+      "number": 184,
+      "title": "npm(deps-dev): bump vitest from 2.1.9 to 4.1.6 in /backend",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-05-25T20:38:23Z",
+      "updated_at": "2026-05-25T20:38:23Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/184",
+      "labels": []
+    },
+    {
+      "number": 183,
+      "title": "npm(deps): bump the production-dependencies group across 1 directory with 6 updates",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-06-29T16:09:38Z",
+      "updated_at": "2026-06-29T16:09:38Z",
+      "merged_at": "2026-06-29T16:09:38Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/183",
+      "labels": []
+    },
+    {
+      "number": 182,
+      "title": "npm(deps-dev): bump vitest from 2.1.9 to 4.1.5 in /backend",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-05-11T22:22:17Z",
+      "updated_at": "2026-05-11T22:22:17Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/182",
+      "labels": []
+    },
+    {
+      "number": 181,
+      "title": "npm(deps-dev): bump eslint from 9.39.2 to 10.2.1",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-06-02T19:13:45Z",
+      "updated_at": "2026-06-02T19:13:45Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/181",
+      "labels": []
+    },
+    {
+      "number": 180,
+      "title": "npm(deps-dev): bump happy-dom from 20.8.4 to 20.9.0",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-07-06T14:27:34Z",
+      "updated_at": "2026-07-06T14:27:34Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/180",
+      "labels": []
+    },
+    {
+      "number": 179,
+      "title": "npm(deps-dev): bump eslint-plugin-react-hooks from 7.0.1 to 7.1.1 in /frontend in the dev-dependencies group across 1 directory",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-06-15T14:26:53Z",
+      "updated_at": "2026-06-15T14:26:53Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/179",
+      "labels": []
+    },
+    {
+      "number": 178,
+      "title": "npm(deps): bump dotenv from 17.3.1 to 17.4.2",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-06-29T16:10:30Z",
+      "updated_at": "2026-06-29T16:10:30Z",
+      "merged_at": "2026-06-29T16:10:30Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/178",
+      "labels": []
+    },
+    {
+      "number": 177,
+      "title": "npm(deps-dev): bump jsdom from 29.0.1 to 29.0.2",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-06-02T19:12:38Z",
+      "updated_at": "2026-06-02T19:12:38Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/177",
+      "labels": []
+    },
+    {
+      "number": 176,
+      "title": "npm(deps-dev): bump globals from 16.5.0 to 17.5.0 in /frontend",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-04-15T17:59:05Z",
+      "updated_at": "2026-04-15T17:59:05Z",
+      "merged_at": "2026-04-15T17:59:05Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/176",
+      "labels": []
+    },
+    {
+      "number": 175,
+      "title": "npm(deps-dev): bump vitest from 2.1.9 to 4.1.4 in /frontend",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-04-15T17:59:21Z",
+      "updated_at": "2026-04-15T17:59:21Z",
+      "merged_at": "2026-04-15T17:59:21Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/175",
+      "labels": []
+    },
+    {
+      "number": 174,
+      "title": "npm(deps-dev): bump vite from 7.2.2 to 8.0.8 in /frontend",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-07-06T14:26:28Z",
+      "updated_at": "2026-07-06T14:26:28Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/174",
+      "labels": []
+    },
+    {
+      "number": 173,
+      "title": "npm(deps): bump the production-dependencies group across 1 directory with 4 updates",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-04-27T18:03:10Z",
+      "updated_at": "2026-04-27T18:03:10Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/173",
+      "labels": []
+    },
+    {
+      "number": 172,
+      "title": "npm(deps-dev): bump vitest from 2.1.9 to 4.1.4 in /backend",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-04-15T17:59:46Z",
+      "updated_at": "2026-04-15T17:59:46Z",
+      "merged_at": "2026-04-15T17:59:46Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/172",
+      "labels": []
+    },
+    {
+      "number": 171,
+      "title": "github-actions(deps): bump pnpm/action-setup from 5 to 6",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-08-03T14:23:58Z",
+      "updated_at": "2026-08-03T14:23:58Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/171",
+      "labels": []
+    },
+    {
+      "number": 170,
+      "title": "npm(deps-dev): bump vite from 7.2.2 to 8.0.5 in /frontend",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-04-13T15:46:06Z",
+      "updated_at": "2026-04-13T15:46:06Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/170",
+      "labels": []
+    },
+    {
+      "number": 169,
+      "title": "npm(deps-dev): bump @vitejs/plugin-react from 5.1.1 to 6.0.1 in /frontend",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-04-15T18:00:08Z",
+      "updated_at": "2026-04-15T18:00:08Z",
+      "merged_at": "2026-04-15T18:00:08Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/169",
+      "labels": []
+    },
+    {
+      "number": 168,
+      "title": "npm(deps): bump the production-dependencies group in /backend with 2 updates",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-05-19T00:09:38Z",
+      "updated_at": "2026-05-19T00:09:38Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/168",
+      "labels": []
+    },
+    {
+      "number": 167,
+      "title": "npm(deps): bump express-rate-limit from 8.3.1 to 8.3.2",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-06-02T10:19:58Z",
+      "updated_at": "2026-06-02T10:19:58Z",
+      "merged_at": "2026-06-02T10:19:58Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/167",
+      "labels": []
+    },
+    {
+      "number": 166,
+      "title": "npm(deps-dev): bump eslint from 9.39.2 to 10.2.0",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-04-20T16:56:40Z",
+      "updated_at": "2026-04-20T16:56:40Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/166",
+      "labels": []
+    },
+    {
+      "number": 165,
+      "title": "npm(deps-dev): bump happy-dom from 20.8.4 to 20.8.9",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-04-20T16:55:59Z",
+      "updated_at": "2026-04-20T16:55:59Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/165",
+      "labels": []
+    },
+    {
+      "number": 164,
+      "title": "npm(deps): bump dotenv from 17.3.1 to 17.4.1",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-04-20T16:55:46Z",
+      "updated_at": "2026-04-20T16:55:46Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/164",
+      "labels": []
+    },
+    {
+      "number": 163,
+      "title": "npm(deps-dev): bump vitest from 2.1.9 to 4.1.2 in /frontend",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-03-30T18:58:57Z",
+      "updated_at": "2026-03-30T18:58:57Z",
+      "merged_at": "2026-03-30T18:58:57Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/163",
+      "labels": []
+    },
+    {
+      "number": 162,
+      "title": "npm(deps-dev): bump vitest from 2.1.9 to 4.1.2 in /backend",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-03-30T18:58:09Z",
+      "updated_at": "2026-03-30T18:58:09Z",
+      "merged_at": "2026-03-30T18:58:09Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/162",
+      "labels": []
+    },
+    {
+      "number": 161,
+      "title": "npm(deps): bump axios from 1.13.2 to 1.14.0 in /frontend in the production-dependencies group",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-03-30T18:57:50Z",
+      "updated_at": "2026-03-30T18:57:50Z",
+      "merged_at": "2026-03-30T18:57:50Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/161",
+      "labels": []
+    },
+    {
+      "number": 160,
+      "title": "npm(deps-dev): bump vitest from 4.1.0 to 4.1.2",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-03-30T19:02:18Z",
+      "updated_at": "2026-03-30T19:02:18Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/160",
+      "labels": []
+    },
+    {
+      "number": 159,
+      "title": "npm(deps-dev): bump eslint from 9.39.2 to 10.1.0",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-04-06T14:30:11Z",
+      "updated_at": "2026-04-06T14:30:11Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/159",
+      "labels": []
+    },
+    {
+      "number": 158,
+      "title": "npm(deps): bump axios from 1.13.6 to 1.14.0",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-03-30T18:57:32Z",
+      "updated_at": "2026-03-30T18:57:32Z",
+      "merged_at": "2026-03-30T18:57:32Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/158",
+      "labels": []
+    },
+    {
+      "number": 157,
+      "title": "npm(deps-dev): bump vite from 7.3.1 to 8.0.3",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-03-30T19:01:29Z",
+      "updated_at": "2026-03-30T19:01:29Z",
+      "merged_at": "2026-03-30T19:01:29Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/157",
+      "labels": []
+    },
+    {
+      "number": 156,
+      "title": "npm(deps-dev): bump @vitejs/plugin-react from 5.1.1 to 5.2.0 in /frontend",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-03-30T18:57:20Z",
+      "updated_at": "2026-03-30T18:57:20Z",
+      "merged_at": "2026-03-30T18:57:20Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/156",
+      "labels": []
+    },
+    {
+      "number": 155,
+      "title": "npm(deps-dev): bump @eslint/js from 9.39.1 to 9.39.4 in /frontend",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-03-30T18:57:05Z",
+      "updated_at": "2026-03-30T18:57:05Z",
+      "merged_at": "2026-03-30T18:57:05Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/155",
+      "labels": []
+    },
+    {
+      "number": 154,
+      "title": "npm(deps-dev): bump globals from 16.5.0 to 17.4.0 in /frontend",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-03-30T19:00:39Z",
+      "updated_at": "2026-03-30T19:00:39Z",
+      "merged_at": "2026-03-30T19:00:39Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/154",
+      "labels": []
+    },
+    {
+      "number": 153,
+      "title": "npm(deps-dev): bump vitest from 2.1.9 to 4.1.0 in /frontend",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-03-25T17:56:00Z",
+      "updated_at": "2026-03-25T17:56:00Z",
+      "merged_at": "2026-03-25T17:56:00Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/153",
+      "labels": []
+    },
+    {
+      "number": 152,
+      "title": "npm(deps-dev): bump globals from 17.3.0 to 17.4.0",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-03-25T17:59:29Z",
+      "updated_at": "2026-03-25T17:59:29Z",
+      "merged_at": "2026-03-25T17:59:29Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/152",
+      "labels": []
+    },
+    {
+      "number": 151,
+      "title": "npm(deps-dev): bump nodemon from 3.1.11 to 3.1.14",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-03-25T17:56:25Z",
+      "updated_at": "2026-03-25T17:56:25Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/151",
+      "labels": []
+    },
+    {
+      "number": 150,
+      "title": "npm(deps-dev): bump vite from 7.3.1 to 8.0.2",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-03-30T15:53:39Z",
+      "updated_at": "2026-03-30T15:53:39Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/150",
+      "labels": []
+    },
+    {
+      "number": 149,
+      "title": "npm(deps): bump express-rate-limit from 8.2.1 to 8.3.1",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-03-25T17:55:31Z",
+      "updated_at": "2026-03-25T17:55:31Z",
+      "merged_at": "2026-03-25T17:55:31Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/149",
+      "labels": []
+    },
+    {
+      "number": 148,
+      "title": "github-actions(deps): bump pnpm/action-setup from 4 to 5",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-03-25T17:55:20Z",
+      "updated_at": "2026-03-25T17:55:20Z",
+      "merged_at": "2026-03-25T17:55:20Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/148",
+      "labels": []
+    },
+    {
+      "number": 147,
+      "title": "npm(deps): bump the production-dependencies group across 1 directory with 2 updates",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-03-21T20:50:03Z",
+      "updated_at": "2026-03-21T20:50:03Z",
+      "merged_at": "2026-03-21T20:50:03Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/147",
+      "labels": []
+    },
+    {
+      "number": 146,
+      "title": "npm(deps): bump the production-dependencies group across 1 directory with 3 updates",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-03-21T20:34:19Z",
+      "updated_at": "2026-03-21T20:34:19Z",
+      "merged_at": "2026-03-21T20:34:19Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/146",
+      "labels": []
+    },
+    {
+      "number": 145,
+      "title": "npm(deps): bump pg from 8.18.0 to 8.20.0",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-03-21T20:21:57Z",
+      "updated_at": "2026-03-21T20:21:57Z",
+      "merged_at": "2026-03-21T20:21:57Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/145",
+      "labels": []
+    },
+    {
+      "number": 144,
+      "title": "npm(deps-dev): bump @vitejs/plugin-react from 5.2.0 to 6.0.1",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-04-15T18:01:13Z",
+      "updated_at": "2026-04-15T18:01:13Z",
+      "merged_at": "2026-04-15T18:01:13Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/144",
+      "labels": []
+    },
+    {
+      "number": 143,
+      "title": "npm(deps-dev): bump jsdom from 28.1.0 to 29.0.0",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-03-21T20:39:59Z",
+      "updated_at": "2026-03-21T20:39:59Z",
+      "merged_at": "2026-03-21T20:39:59Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/143",
+      "labels": []
+    },
+    {
+      "number": 141,
+      "title": "npm(deps-dev): bump vitest from 2.1.9 to 4.1.0 in /backend",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-03-21T20:21:00Z",
+      "updated_at": "2026-03-21T20:21:00Z",
+      "merged_at": "2026-03-21T20:21:00Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/141",
+      "labels": []
+    },
+    {
+      "number": 142,
+      "title": "npm(deps-dev): bump happy-dom from 20.0.11 to 20.8.4",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-03-21T20:29:55Z",
+      "updated_at": "2026-03-21T20:29:55Z",
+      "merged_at": "2026-03-21T20:29:55Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/142",
+      "labels": []
+    },
+    {
+      "number": 140,
+      "title": "npm(deps): bump the production-dependencies group across 1 directory with 3 updates",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-03-21T20:22:49Z",
+      "updated_at": "2026-03-21T20:22:49Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/140",
+      "labels": []
+    },
+    {
+      "number": 139,
+      "title": "npm(deps): bump the production-dependencies group across 1 directory with 5 updates",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-03-21T20:20:51Z",
+      "updated_at": "2026-03-21T20:20:51Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/139",
+      "labels": []
+    },
+    {
+      "number": 138,
+      "title": "npm(deps): bump the production-dependencies group across 1 directory with 4 updates",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-03-12T15:47:18Z",
+      "updated_at": "2026-03-12T15:47:18Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/138",
+      "labels": []
+    },
+    {
+      "number": 137,
+      "title": "github-actions(deps): bump docker/setup-buildx-action from 3 to 4",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-03-21T20:52:37Z",
+      "updated_at": "2026-03-21T20:52:37Z",
+      "merged_at": "2026-03-21T20:52:37Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/137",
+      "labels": []
+    },
+    {
+      "number": 136,
+      "title": "github-actions(deps): bump docker/build-push-action from 6 to 7",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-03-21T20:18:22Z",
+      "updated_at": "2026-03-21T20:18:22Z",
+      "merged_at": "2026-03-21T20:18:22Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/136",
+      "labels": []
+    },
+    {
+      "number": 135,
+      "title": "github-actions(deps): bump docker/login-action from 3 to 4",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-03-21T20:17:56Z",
+      "updated_at": "2026-03-21T20:17:56Z",
+      "merged_at": "2026-03-21T20:17:56Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/135",
+      "labels": []
+    },
+    {
+      "number": 134,
+      "title": "npm(deps): bump the production-dependencies group across 1 directory with 3 updates",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-03-09T15:59:29Z",
+      "updated_at": "2026-03-09T15:59:29Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/134",
+      "labels": []
+    },
+    {
+      "number": 133,
+      "title": "npm(deps): bump pg from 8.18.0 to 8.19.0",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-03-16T14:48:15Z",
+      "updated_at": "2026-03-16T14:48:15Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/133",
+      "labels": []
+    },
+    {
+      "number": 132,
+      "title": "npm(deps-dev): bump happy-dom from 20.0.11 to 20.7.0",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-03-16T14:46:35Z",
+      "updated_at": "2026-03-16T14:46:35Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/132",
+      "labels": []
+    },
+    {
+      "number": 131,
+      "title": "npm(deps-dev): bump @types/react from 19.2.9 to 19.2.14",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-03-21T20:19:04Z",
+      "updated_at": "2026-03-21T20:19:04Z",
+      "merged_at": "2026-03-21T20:19:04Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/131",
+      "labels": []
+    },
+    {
+      "number": 130,
+      "title": "github-actions(deps): bump actions/upload-artifact from 6 to 7",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-03-12T15:46:01Z",
+      "updated_at": "2026-03-12T15:46:01Z",
+      "merged_at": "2026-03-12T15:46:01Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/130",
+      "labels": []
+    },
+    {
+      "number": 129,
+      "title": "npm(deps): bump the production-dependencies group across 1 directory with 6 updates",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-03-12T15:46:52Z",
+      "updated_at": "2026-03-12T15:46:52Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/129",
+      "labels": []
+    },
+    {
+      "number": 128,
+      "title": "npm(deps-dev): bump @eslint/js from 9.39.1 to 9.39.3 in /frontend",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-03-12T15:44:45Z",
+      "updated_at": "2026-03-12T15:44:45Z",
+      "merged_at": "2026-03-12T15:44:45Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/128",
+      "labels": []
+    },
+    {
+      "number": 127,
+      "title": "npm(deps): bump the production-dependencies group across 1 directory with 2 updates",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-03-02T15:43:45Z",
+      "updated_at": "2026-03-02T15:43:45Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/127",
+      "labels": []
+    },
+    {
+      "number": 126,
+      "title": "npm(deps-dev): bump eslint-plugin-react-refresh from 0.4.24 to 0.5.1 in /frontend in the dev-dependencies group",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-03-21T20:23:00Z",
+      "updated_at": "2026-03-21T20:23:00Z",
+      "merged_at": "2026-03-21T20:23:00Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/126",
+      "labels": []
+    },
+    {
+      "number": 125,
+      "title": "npm(deps-dev): bump happy-dom from 20.0.11 to 20.6.1",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-03-02T15:43:25Z",
+      "updated_at": "2026-03-02T15:43:25Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/125",
+      "labels": []
+    },
+    {
+      "number": 124,
+      "title": "npm(deps): bump dotenv from 17.2.3 to 17.3.1",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-03-12T15:45:14Z",
+      "updated_at": "2026-03-12T15:45:14Z",
+      "merged_at": "2026-03-12T15:45:14Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/124",
+      "labels": []
+    },
+    {
+      "number": 123,
+      "title": "npm(deps-dev): bump jsdom from 27.4.0 to 28.1.0",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-03-12T15:46:26Z",
+      "updated_at": "2026-03-12T15:46:26Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/123",
+      "labels": []
+    },
+    {
+      "number": 119,
+      "title": "npm(deps-dev): bump happy-dom from 20.0.11 to 20.5.3",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-02-16T15:37:41Z",
+      "updated_at": "2026-02-16T15:37:41Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/119",
+      "labels": []
+    },
+    {
+      "number": 115,
+      "title": "npm(deps-dev): bump eslint-plugin-react-refresh from 0.4.24 to 0.5.0 in /frontend in the dev-dependencies group",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-02-25T03:13:31Z",
+      "updated_at": "2026-02-25T03:13:31Z",
+      "merged_at": "2026-02-25T03:13:31Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/115",
+      "labels": []
+    },
+    {
+      "number": 113,
+      "title": "npm(deps): bump dotenv from 17.2.3 to 17.2.4 in /backend in the production-dependencies group across 1 directory",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-02-23T15:49:22Z",
+      "updated_at": "2026-02-23T15:49:22Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/113",
+      "labels": []
+    },
+    {
+      "number": 112,
+      "title": "npm(deps-dev): bump jsdom from 27.4.0 to 28.0.0 in /frontend",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-02-25T03:12:19Z",
+      "updated_at": "2026-02-25T03:12:19Z",
+      "merged_at": "2026-02-25T03:12:19Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/112",
+      "labels": []
+    },
+    {
+      "number": 111,
+      "title": "npm(deps-dev): bump vitest from 2.1.9 to 4.0.18 in /frontend",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-02-06T02:49:17Z",
+      "updated_at": "2026-02-06T02:49:17Z",
+      "merged_at": "2026-02-06T02:49:17Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/111",
+      "labels": []
+    },
+    {
+      "number": 110,
+      "title": "npm(deps-dev): bump globals from 16.5.0 to 17.3.0 in /frontend",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-02-06T02:48:59Z",
+      "updated_at": "2026-02-06T02:48:59Z",
+      "merged_at": "2026-02-06T02:48:59Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/110",
+      "labels": []
+    },
+    {
+      "number": 109,
+      "title": "npm(deps): bump the production-dependencies group in /frontend with 4 updates",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-02-23T15:49:52Z",
+      "updated_at": "2026-02-23T15:49:52Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/109",
+      "labels": []
+    },
+    {
+      "number": 108,
+      "title": "npm(deps-dev): bump vitest from 2.1.9 to 4.0.18 in /backend",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-02-06T02:50:34Z",
+      "updated_at": "2026-02-06T02:50:34Z",
+      "merged_at": "2026-02-06T02:50:34Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/108",
+      "labels": []
+    },
+    {
+      "number": 107,
+      "title": "npm(deps): bump @tailwindcss/vite from 4.1.17 to 4.1.18",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-02-06T02:49:15Z",
+      "updated_at": "2026-02-06T02:49:15Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/107",
+      "labels": []
+    },
+    {
+      "number": 106,
+      "title": "npm(deps): bump pg from 8.16.3 to 8.18.0 in /backend in the production-dependencies group",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-02-06T02:51:39Z",
+      "updated_at": "2026-02-06T02:51:39Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/106",
+      "labels": []
+    },
+    {
+      "number": 105,
+      "title": "npm(deps-dev): bump eslint-plugin-react-refresh from 0.4.26 to 0.5.0",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-02-25T03:11:56Z",
+      "updated_at": "2026-02-25T03:11:56Z",
+      "merged_at": "2026-02-25T03:11:56Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/105",
+      "labels": []
+    },
+    {
+      "number": 104,
+      "title": "npm(deps-dev): bump vitest from 4.0.15 to 4.0.18",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-02-25T03:13:03Z",
+      "updated_at": "2026-02-25T03:13:03Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/104",
+      "labels": []
+    },
+    {
+      "number": 103,
+      "title": "npm(deps): bump pg from 8.16.3 to 8.18.0",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-02-06T02:50:08Z",
+      "updated_at": "2026-02-06T02:50:08Z",
+      "merged_at": "2026-02-06T02:50:08Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/103",
+      "labels": []
+    },
+    {
+      "number": 102,
+      "title": "npm(deps): bump the production-dependencies group across 1 directory with 6 updates",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-01-27T03:19:34Z",
+      "updated_at": "2026-01-27T03:19:34Z",
+      "merged_at": "2026-01-27T03:19:34Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/102",
+      "labels": []
+    },
+    {
+      "number": 101,
+      "title": "npm(deps): bump the production-dependencies group across 1 directory with 6 updates",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-01-27T03:18:34Z",
+      "updated_at": "2026-01-27T03:18:34Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/101",
+      "labels": []
+    },
+    {
+      "number": 100,
+      "title": "npm(deps): bump the production-dependencies group across 1 directory with 2 updates",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-01-27T03:18:34Z",
+      "updated_at": "2026-01-27T03:18:34Z",
+      "merged_at": "2026-01-27T03:18:34Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/100",
+      "labels": []
+    },
+    {
+      "number": 99,
+      "title": "npm(deps-dev): bump vite from 7.2.7 to 7.3.1",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-01-27T03:20:06Z",
+      "updated_at": "2026-01-27T03:20:06Z",
+      "merged_at": "2026-01-27T03:20:06Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/99",
+      "labels": []
+    },
+    {
+      "number": 98,
+      "title": "npm(deps-dev): bump vitest from 2.1.9 to 4.0.17 in /frontend",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-02-02T16:31:17Z",
+      "updated_at": "2026-02-02T16:31:17Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/98",
+      "labels": []
+    },
+    {
+      "number": 97,
+      "title": "npm(deps-dev): bump jsdom from 27.3.0 to 27.4.0",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-01-27T03:17:12Z",
+      "updated_at": "2026-01-27T03:17:12Z",
+      "merged_at": "2026-01-27T03:17:12Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/97",
+      "labels": []
+    },
+    {
+      "number": 95,
+      "title": "npm(deps-dev): bump eslint-plugin-react-refresh from 0.4.24 to 0.4.26 in /frontend in the dev-dependencies group",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-01-27T03:17:44Z",
+      "updated_at": "2026-01-27T03:17:44Z",
+      "merged_at": "2026-01-27T03:17:44Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/95",
+      "labels": []
+    },
+    {
+      "number": 96,
+      "title": "npm(deps-dev): bump @testing-library/react from 16.3.1 to 16.3.2",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-02-06T02:48:26Z",
+      "updated_at": "2026-02-06T02:48:26Z",
+      "merged_at": "2026-02-06T02:48:26Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/96",
+      "labels": []
+    },
+    {
+      "number": 94,
+      "title": "npm(deps): bump pg from 8.16.3 to 8.17.1 in /backend in the production-dependencies group",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-01-26T15:56:06Z",
+      "updated_at": "2026-01-26T15:56:06Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/94",
+      "labels": []
+    },
+    {
+      "number": 93,
+      "title": "npm(deps): bump tailwindcss from 4.1.17 to 4.1.18",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-01-27T03:16:54Z",
+      "updated_at": "2026-01-27T03:16:54Z",
+      "merged_at": "2026-01-27T03:16:54Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/93",
+      "labels": []
+    },
+    {
+      "number": 92,
+      "title": "npm(deps): bump the production-dependencies group across 1 directory with 5 updates",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-01-26T15:56:31Z",
+      "updated_at": "2026-01-26T15:56:31Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/92",
+      "labels": []
+    },
+    {
+      "number": 91,
+      "title": "npm(deps): bump react and @types/react",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-01-27T03:16:41Z",
+      "updated_at": "2026-01-27T03:16:41Z",
+      "merged_at": "2026-01-27T03:16:41Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/91",
+      "labels": []
+    },
+    {
+      "number": 90,
+      "title": "npm(deps-dev): bump vitest from 2.1.9 to 4.0.17 in /backend",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-01-13T17:01:07Z",
+      "updated_at": "2026-01-13T17:01:07Z",
+      "merged_at": "2026-01-13T17:01:07Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/90",
+      "labels": []
+    },
+    {
+      "number": 89,
+      "title": "npm(deps-dev): bump supertest from 7.1.4 to 7.2.2 in /backend in the dev-dependencies group",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-01-27T03:17:29Z",
+      "updated_at": "2026-01-27T03:17:29Z",
+      "merged_at": "2026-01-27T03:17:29Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/89",
+      "labels": []
+    },
+    {
+      "number": 88,
+      "title": "docker(deps): bump node from 20-alpine to 25-alpine in /backend",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-01-13T17:03:18Z",
+      "updated_at": "2026-01-13T17:03:18Z",
+      "merged_at": "2026-01-13T17:03:18Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/88",
+      "labels": []
+    },
+    {
+      "number": 87,
+      "title": "npm(deps-dev): bump vitest from 2.1.9 to 4.0.16 in /backend",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-01-12T18:15:12Z",
+      "updated_at": "2026-01-12T18:15:12Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/87",
+      "labels": []
+    },
+    {
+      "number": 86,
+      "title": "npm(deps): bump the production-dependencies group in /frontend with 6 updates",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-01-13T17:01:28Z",
+      "updated_at": "2026-01-13T17:01:28Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/86",
+      "labels": []
+    },
+    {
+      "number": 85,
+      "title": "npm(deps-dev): bump @testing-library/react from 16.3.0 to 16.3.1",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-01-13T17:04:33Z",
+      "updated_at": "2026-01-13T17:04:33Z",
+      "merged_at": "2026-01-13T17:04:33Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/85",
+      "labels": []
+    },
+    {
+      "number": 84,
+      "title": "npm(deps): bump react from 19.2.1 to 19.2.3",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-01-13T16:58:25Z",
+      "updated_at": "2026-01-13T16:58:25Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/84",
+      "labels": []
+    },
+    {
+      "number": 83,
+      "title": "npm(deps-dev): bump the dev-dependencies group in /frontend with 3 updates",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-01-13T16:58:28Z",
+      "updated_at": "2026-01-13T16:58:28Z",
+      "merged_at": "2026-01-13T16:58:28Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/83",
+      "labels": []
+    },
+    {
+      "number": 82,
+      "title": "npm(deps): bump react-dom from 19.2.1 to 19.2.3",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-01-13T17:00:17Z",
+      "updated_at": "2026-01-13T17:00:17Z",
+      "merged_at": "2026-01-13T17:00:17Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/82",
+      "labels": []
+    },
+    {
+      "number": 81,
+      "title": "npm(deps-dev): bump vite from 7.2.6 to 7.3.0",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-01-19T16:30:27Z",
+      "updated_at": "2026-01-19T16:30:27Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/81",
+      "labels": []
+    },
+    {
+      "number": 80,
+      "title": "github-actions(deps): bump actions/upload-artifact from 5 to 6",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-01-13T16:57:47Z",
+      "updated_at": "2026-01-13T16:57:47Z",
+      "merged_at": "2026-01-13T16:57:47Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/80",
+      "labels": []
+    },
+    {
+      "number": 79,
+      "title": "npm(deps): bump the production-dependencies group across 1 directory with 3 updates",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2025-12-11T10:38:41Z",
+      "updated_at": "2025-12-11T10:38:41Z",
+      "merged_at": "2025-12-11T10:38:41Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/79",
+      "labels": []
+    },
+    {
+      "number": 78,
+      "title": "npm(deps-dev): bump vitest from 2.1.9 to 4.0.15 in /frontend",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-01-19T16:29:22Z",
+      "updated_at": "2026-01-19T16:29:22Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/78",
+      "labels": []
+    },
+    {
+      "number": 77,
+      "title": "npm(deps): bump the production-dependencies group in /frontend with 5 updates",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2025-12-09T17:43:05Z",
+      "updated_at": "2025-12-09T17:43:05Z",
+      "merged_at": null,
+      "is_merged": false,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/77",
+      "labels": []
+    },
+    {
+      "number": 76,
+      "title": "npm(deps): bump express from 5.1.0 to 5.2.1",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2025-12-09T17:42:25Z",
+      "updated_at": "2025-12-09T17:42:25Z",
+      "merged_at": "2025-12-09T17:42:25Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/76",
+      "labels": []
+    },
+    {
+      "number": 75,
+      "title": "npm(deps-dev): bump vitest from 2.1.9 to 4.0.15 in /backend",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2025-12-11T10:39:02Z",
+      "updated_at": "2025-12-11T10:39:02Z",
+      "merged_at": "2025-12-11T10:39:02Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/75",
+      "labels": []
+    },
+    {
+      "number": 74,
+      "title": "npm(deps-dev): bump jsdom from 27.2.0 to 27.3.0",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2026-01-13T16:57:01Z",
+      "updated_at": "2026-01-13T16:57:01Z",
+      "merged_at": "2026-01-13T16:57:01Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/74",
+      "labels": []
+    },
+    {
+      "number": 72,
+      "title": "npm(deps): bump express from 5.1.0 to 5.2.1 in /backend in the production-dependencies group",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2025-12-09T17:41:55Z",
+      "updated_at": "2025-12-09T17:41:55Z",
+      "merged_at": "2025-12-09T17:41:55Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/72",
+      "labels": []
+    },
+    {
+      "number": 73,
+      "title": "npm(deps-dev): bump vitest from 2.1.9 to 4.0.15",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2025-12-09T17:41:44Z",
+      "updated_at": "2025-12-09T17:41:44Z",
+      "merged_at": "2025-12-09T17:41:44Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/73",
+      "labels": []
+    },
+    {
+      "number": 71,
+      "title": "npm(deps): bump react-dom from 19.2.0 to 19.2.1",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2025-12-11T10:39:26Z",
+      "updated_at": "2025-12-11T10:39:26Z",
+      "merged_at": "2025-12-11T10:39:26Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/71",
+      "labels": []
+    },
+    {
+      "number": 70,
+      "title": "npm(deps): bump react from 19.2.0 to 19.2.1",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2025-12-09T17:41:13Z",
+      "updated_at": "2025-12-09T17:41:13Z",
+      "merged_at": "2025-12-09T17:41:13Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/70",
+      "labels": []
+    },
+    {
+      "number": 69,
+      "title": "github-actions(deps): bump actions/setup-node from 4 to 6",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2025-12-09T17:40:58Z",
+      "updated_at": "2025-12-09T17:40:58Z",
+      "merged_at": "2025-12-09T17:40:58Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/69",
+      "labels": []
+    },
+    {
+      "number": 68,
+      "title": "github-actions(deps): bump pnpm/action-setup from 2 to 4",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2025-12-09T17:40:42Z",
+      "updated_at": "2025-12-09T17:40:42Z",
+      "merged_at": "2025-12-09T17:40:42Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/68",
+      "labels": []
+    },
+    {
+      "number": 67,
+      "title": "github-actions(deps): bump actions/checkout from 4 to 6",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2025-12-09T17:40:24Z",
+      "updated_at": "2025-12-09T17:40:24Z",
+      "merged_at": "2025-12-09T17:40:24Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/67",
+      "labels": []
+    },
+    {
+      "number": 66,
+      "title": "npm(deps-dev): bump vite from 7.2.4 to 7.2.6 in /frontend in the production-dependencies group",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "created_at": "2025-12-06T17:29:20Z",
+      "updated_at": "2025-12-06T17:29:20Z",
+      "merged_at": "2025-12-06T17:29:20Z",
+      "is_merged": true,
+      "html_url": "https://github.com/Jefino9488/template-vite-react-node-postgres/pull/66",
+      "labels": []
+    }
+  ]
+}

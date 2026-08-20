@@ -1,24 +1,99 @@
 {
-  "last_pushed_at": "2026-04-09T07:06:29",
+  "last_pushed_at": "2026-04-09T07:06:28",
   "analysis": {
+    "overview": "A premium, responsive, and interactive calendar experience inspired by a physical wall calendar, built with modern frontend technologies. Live Demo: https://wall-calender-mu.vercel.app/ Key features include Quick Highlights, Live Demo, Demo Video, Interactive Calendar, Clear distinction between, and Dynamic Hero Section.",
     "technologies": [
-      "Next.js",
+      "TypeScript",
+      "CSS",
+      "JavaScript",
       "React",
-      "Tailwind CSS",
-      "TypeScript"
+      "Next.js",
+      "Tailwind CSS"
     ],
-    "architecture_overview": "&bull; Description: \u2728 A premium, responsive, and interactive calendar experience inspired by a physical wall calendar, built with modern frontend technologies. \ud83d\udc49 \ud83d\udd25 Live Demo: https://wall-calender-mu.vercel.app/ \n &bull; Frontend: Next.js SSR Frontend \n &bull; Backend: Not detected \n &bull; Database: Not detected \n &bull; Main Data Flow: Single Page client-rendered flow managed by Next.js SSR Frontend views.",
+    "architecture_overview": "- **Repository Purpose**: A premium, responsive, and interactive calendar experience inspired by a physical wall calendar, built with modern frontend technologies. Live Demo: https://wall-calender-mu.vercel.app/ Key features include Quick Highlights, Live Demo, Demo Video, Interactive Calendar, Clear distinction between, and Dynamic Hero Section.\n- **Frontend Tier**: Next.js SSR Frontend\n- **Backend Tier**: Not detected\n- **Database Tier**: Not detected\n- **System Data Flow**: Single Page client-rendered flow managed by Next.js SSR Frontend views.",
     "key_components": [
-      "src/components/Calendar.tsx (Visual Component interface)",
-      "src/components/DateCell.tsx (Visual Component interface)",
-      "src/components/HeroMonthImage.tsx (Visual Component interface)",
-      "src/components/Notes.tsx (Visual Component interface)"
+      "src/components/Calendar.tsx (UI Component View)",
+      "src/components/DateCell.tsx (UI Component View)",
+      "src/components/HeroMonthImage.tsx (UI Component View)",
+      "src/components/Notes.tsx (UI Component View)"
     ],
-    "api_surface": [],
+    "key_components_details": [
+      {
+        "path": "src/components/Calendar.tsx",
+        "name": "Calendar",
+        "role": "UI Component View",
+        "purpose": "Renders visual user interface component in src/components/Calendar.tsx.",
+        "relationships": [
+          "src/components"
+        ]
+      },
+      {
+        "path": "src/components/DateCell.tsx",
+        "name": "Datecell",
+        "role": "UI Component View",
+        "purpose": "Renders visual user interface component in src/components/DateCell.tsx.",
+        "relationships": [
+          "src/components"
+        ]
+      },
+      {
+        "path": "src/components/HeroMonthImage.tsx",
+        "name": "Heromonthimage",
+        "role": "UI Component View",
+        "purpose": "Renders visual user interface component in src/components/HeroMonthImage.tsx.",
+        "relationships": [
+          "src/components"
+        ]
+      },
+      {
+        "path": "src/components/Notes.tsx",
+        "name": "Notes",
+        "role": "UI Component View",
+        "purpose": "Renders visual user interface component in src/components/Notes.tsx.",
+        "relationships": [
+          "src/components"
+        ]
+      }
+    ],
+    "api_surface": [
+      "None detected"
+    ],
+    "api_surface_details": [],
     "code_patterns": [
-      "React Functional Component Lifecycle Hooks"
+      "Centralized Exception Guarding",
+      "React Hooks Component Lifecycle"
     ],
-    "integration_points": [],
+    "code_patterns_details": [
+      {
+        "pattern_name": "Functional State & Lifecycle Management",
+        "category": "State Management",
+        "description": "Uses React functional hooks (useState, useEffect, useContext) for local and global state handling.",
+        "source_files": [
+          "src/app/page.tsx",
+          "src/components/Calendar.tsx",
+          "src/components/HeroMonthImage.tsx",
+          "src/components/Notes.tsx"
+        ],
+        "reusable_approach": "Encapsulates reactive view logic inside functional components."
+      },
+      {
+        "pattern_name": "Structured Exception Guarding",
+        "category": "Error Handling",
+        "description": "Wraps external API communications and database sessions in try/except guards returning standard error payloads.",
+        "source_files": [
+          "next.config.js",
+          "src/app/layout.tsx",
+          "src/app/page.tsx",
+          "src/components/Calendar.tsx",
+          "src/components/DateCell.tsx"
+        ],
+        "reusable_approach": "Ensures clean status codes and structured diagnostic error messages."
+      }
+    ],
+    "integration_points": [
+      "None detected"
+    ],
+    "integration_points_details": [],
     "dependencies": [
       "@tailwindcss/postcss",
       "@types/node",
@@ -32,6 +107,338 @@
       "react-dom",
       "tailwindcss",
       "typescript"
-    ]
-  }
+    ],
+    "dependencies_details": [
+      {
+        "package": "next",
+        "version": "16.2.3",
+        "ecosystem": "npm",
+        "purpose": "JavaScript/TypeScript package dependency",
+        "relationships": "package.json"
+      },
+      {
+        "package": "react",
+        "version": "19.2.4",
+        "ecosystem": "npm",
+        "purpose": "Frontend UI library for component views",
+        "relationships": "package.json"
+      },
+      {
+        "package": "react-dom",
+        "version": "19.2.4",
+        "ecosystem": "npm",
+        "purpose": "Frontend UI library for component views",
+        "relationships": "package.json"
+      },
+      {
+        "package": "@tailwindcss/postcss",
+        "version": "^4",
+        "ecosystem": "npm",
+        "purpose": "Utility-first CSS styling framework",
+        "relationships": "package.json"
+      },
+      {
+        "package": "@types/node",
+        "version": "^20",
+        "ecosystem": "npm",
+        "purpose": "JavaScript/TypeScript package dependency",
+        "relationships": "package.json"
+      },
+      {
+        "package": "@types/react",
+        "version": "^19",
+        "ecosystem": "npm",
+        "purpose": "Frontend UI library for component views",
+        "relationships": "package.json"
+      },
+      {
+        "package": "@types/react-dom",
+        "version": "^19",
+        "ecosystem": "npm",
+        "purpose": "Frontend UI library for component views",
+        "relationships": "package.json"
+      },
+      {
+        "package": "babel-plugin-react-compiler",
+        "version": "1.0.0",
+        "ecosystem": "npm",
+        "purpose": "Frontend UI library for component views",
+        "relationships": "package.json"
+      },
+      {
+        "package": "eslint",
+        "version": "^9",
+        "ecosystem": "npm",
+        "purpose": "JavaScript/TypeScript package dependency",
+        "relationships": "package.json"
+      },
+      {
+        "package": "eslint-config-next",
+        "version": "16.2.3",
+        "ecosystem": "npm",
+        "purpose": "JavaScript/TypeScript package dependency",
+        "relationships": "package.json"
+      },
+      {
+        "package": "tailwindcss",
+        "version": "^4",
+        "ecosystem": "npm",
+        "purpose": "Utility-first CSS styling framework",
+        "relationships": "package.json"
+      },
+      {
+        "package": "typescript",
+        "version": "^5",
+        "ecosystem": "npm",
+        "purpose": "JavaScript/TypeScript package dependency",
+        "relationships": "package.json"
+      }
+    ],
+    "build_deployment_config": [],
+    "database_technologies": [],
+    "external_services": [],
+    "readme_insights": {
+      "has_readme": true,
+      "summary": "A premium, responsive, and interactive calendar experience inspired by a physical wall calendar, built with modern frontend technologies. Live Demo: https://wall-calender-mu.vercel.app/ Key features include Quick Highlights, Live Demo, Demo Video, Interactive Calendar, Clear distinction between, and Dynamic Hero Section.",
+      "sections": [
+        "\ud83d\uddd3\ufe0f Interactive Wall Calendar Component",
+        "\ud83d\ude80 Quick Highlights",
+        "\ud83c\udf10 Live Demo",
+        "\ud83c\udfa5 Demo Video",
+        "\u2728 Features",
+        "\ud83d\udcc5 Interactive Calendar",
+        "\ud83d\uddbc\ufe0f Dynamic Hero Section",
+        "\ud83d\udcdd Notes System"
+      ]
+    }
+  },
+  "cache_version": 4,
+  "languages": {
+    "TypeScript": 88.0,
+    "CSS": 7.7,
+    "JavaScript": 4.3
+  },
+  "file_structure": [
+    {
+      "path": ".gitignore",
+      "type": "blob"
+    },
+    {
+      "path": "AGENTS.md",
+      "type": "blob"
+    },
+    {
+      "path": "CLAUDE.md",
+      "type": "blob"
+    },
+    {
+      "path": "Preview.png",
+      "type": "blob"
+    },
+    {
+      "path": "README.md",
+      "type": "blob"
+    },
+    {
+      "path": "eslint.config.mjs",
+      "type": "blob"
+    },
+    {
+      "path": "next.config.js",
+      "type": "blob"
+    },
+    {
+      "path": "package-lock.json",
+      "type": "blob"
+    },
+    {
+      "path": "package.json",
+      "type": "blob"
+    },
+    {
+      "path": "postcss.config.mjs",
+      "type": "blob"
+    },
+    {
+      "path": "tsconfig.json",
+      "type": "blob"
+    },
+    {
+      "path": "public/file.svg",
+      "type": "blob"
+    },
+    {
+      "path": "public/globe.svg",
+      "type": "blob"
+    },
+    {
+      "path": "public/hero-calendar.svg",
+      "type": "blob"
+    },
+    {
+      "path": "public/next.svg",
+      "type": "blob"
+    },
+    {
+      "path": "public/vercel.svg",
+      "type": "blob"
+    },
+    {
+      "path": "public/window.svg",
+      "type": "blob"
+    },
+    {
+      "path": "src/app/favicon.ico",
+      "type": "blob"
+    },
+    {
+      "path": "src/app/globals.css",
+      "type": "blob"
+    },
+    {
+      "path": "src/app/layout.tsx",
+      "type": "blob"
+    },
+    {
+      "path": "src/app/page.tsx",
+      "type": "blob"
+    },
+    {
+      "path": "src/components/Calendar.tsx",
+      "type": "blob"
+    },
+    {
+      "path": "src/components/DateCell.tsx",
+      "type": "blob"
+    },
+    {
+      "path": "src/components/HeroMonthImage.tsx",
+      "type": "blob"
+    },
+    {
+      "path": "src/components/Notes.tsx",
+      "type": "blob"
+    },
+    {
+      "path": "src/lib/debounce.ts",
+      "type": "blob"
+    },
+    {
+      "path": "src/lib/monthHeroImages.ts",
+      "type": "blob"
+    },
+    {
+      "path": "src/lib/monthTheme.ts",
+      "type": "blob"
+    }
+  ],
+  "commits": [
+    {
+      "sha": "58aaff52e6",
+      "message": "Update README.md",
+      "author": "23it101PopatHemangi",
+      "date": "2026-04-09T07:06:28Z"
+    },
+    {
+      "sha": "e41266260e",
+      "message": "Update README.md",
+      "author": "23it101PopatHemangi",
+      "date": "2026-04-09T07:06:10Z"
+    },
+    {
+      "sha": "aae64cd3ce",
+      "message": "Update README.md",
+      "author": "23it101PopatHemangi",
+      "date": "2026-04-09T06:10:11Z"
+    },
+    {
+      "sha": "8fecafa986",
+      "message": "Update README.md",
+      "author": "23it101PopatHemangi",
+      "date": "2026-04-09T06:06:00Z"
+    },
+    {
+      "sha": "030e931707",
+      "message": "added preview image",
+      "author": "23it101PopatHemangi",
+      "date": "2026-04-09T05:57:57Z"
+    },
+    {
+      "sha": "3eacc07b50",
+      "message": "Update README.md",
+      "author": "23it101PopatHemangi",
+      "date": "2026-04-09T05:55:43Z"
+    },
+    {
+      "sha": "c2a1182964",
+      "message": "Update README.md",
+      "author": "23it101PopatHemangi",
+      "date": "2026-04-09T05:51:31Z"
+    },
+    {
+      "sha": "ebcf1e1a37",
+      "message": "Update README.md",
+      "author": "23it101PopatHemangi",
+      "date": "2026-04-09T05:48:18Z"
+    },
+    {
+      "sha": "38ff637115",
+      "message": "Update README.md",
+      "author": "23it101PopatHemangi",
+      "date": "2026-04-09T05:48:04Z"
+    },
+    {
+      "sha": "34215db91e",
+      "message": "Update README.md",
+      "author": "23it101PopatHemangi",
+      "date": "2026-04-09T05:46:41Z"
+    },
+    {
+      "sha": "7cdd09105d",
+      "message": "Update README.md",
+      "author": "23it101PopatHemangi",
+      "date": "2026-04-09T05:41:35Z"
+    },
+    {
+      "sha": "a9a4edfa6c",
+      "message": "Update README.md",
+      "author": "23it101PopatHemangi",
+      "date": "2026-04-09T05:40:49Z"
+    },
+    {
+      "sha": "5e842d2738",
+      "message": "added project files",
+      "author": "23it101PopatHemangi",
+      "date": "2026-04-08T22:37:12Z"
+    },
+    {
+      "sha": "b9b37cf0b1",
+      "message": "Initial commit from Create Next App",
+      "author": "23it101PopatHemangi",
+      "date": "2026-04-08T21:04:31Z"
+    }
+  ],
+  "total_commits": 14,
+  "branches": [
+    {
+      "name": "main",
+      "protected": false,
+      "commit_sha": "58aaff5"
+    },
+    {
+      "name": "master",
+      "protected": false,
+      "commit_sha": "5e842d2"
+    }
+  ],
+  "contributors": [
+    {
+      "login": "23it101PopatHemangi",
+      "contributions": 14,
+      "avatar_url": "https://avatars.githubusercontent.com/u/152361000?v=4",
+      "html_url": "https://github.com/23it101PopatHemangi"
+    }
+  ],
+  "issues": [],
+  "pull_requests": []
 }

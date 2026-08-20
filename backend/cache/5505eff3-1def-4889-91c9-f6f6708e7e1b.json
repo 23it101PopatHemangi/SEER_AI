@@ -1,0 +1,437 @@
+{
+  "last_pushed_at": "2026-04-01T17:54:09",
+  "analysis": {
+    "overview": "A premium academic resource exchange platform built with React Native (Expo) and Supabase. Go to Supabase and create a new project. Key features include Configure Supabase, Install Dependencies, Android, Troubleshooting, and Supabase Connection Error.",
+    "technologies": [
+      "TypeScript"
+    ],
+    "architecture_overview": "- **Repository Purpose**: A premium academic resource exchange platform built with React Native (Expo) and Supabase. Go to Supabase and create a new project. Key features include Configure Supabase, Install Dependencies, Android, Troubleshooting, and Supabase Connection Error.\n- **Frontend Tier**: Not detected\n- **Backend Tier**: Not detected\n- **Database Tier**: Not detected\n- **System Data Flow**: Not detected",
+    "key_components": [
+      "App.tsx (Core Application Entrypoint)",
+      "components/auth/SocialAuthButton.tsx (UI Component View)",
+      "components/common/AppButton.tsx (UI Component View)",
+      "components/common/AppTextInput.tsx (UI Component View)",
+      "components/common/GradientBackground.tsx (UI Component View)",
+      "components/common/ResourceCard.tsx (UI Component View)",
+      "components/common/SkeletonResourceCard.tsx (UI Component View)",
+      "context/AuthContext.tsx (Service & Business Logic Module)",
+      "context/NotificationContext.tsx (Service & Business Logic Module)",
+      "context/ThemeContext.tsx (Service & Business Logic Module)",
+      "index.ts (Core Application Entrypoint)",
+      "screens/auth/ForgotPasswordScreen.tsx (UI Component View)",
+      "screens/auth/LoginScreen.tsx (UI Component View)",
+      "screens/auth/RegisterScreen.tsx (UI Component View)",
+      "screens/auth/SplashScreen.tsx (UI Component View)",
+      "screens/auth/UpdatePasswordScreen.tsx (UI Component View)",
+      "screens/chat/ChatListScreen.tsx (UI Component View)",
+      "screens/chat/ChatScreen.tsx (UI Component View)",
+      "services/supabase.ts (Service & Business Logic Module)"
+    ],
+    "key_components_details": [
+      {
+        "path": "App.tsx",
+        "name": "App",
+        "role": "Core Application Entrypoint",
+        "purpose": "Main application entrypoint and initialization module in App.tsx.",
+        "relationships": [
+          "root"
+        ]
+      },
+      {
+        "path": "index.ts",
+        "name": "Index",
+        "role": "Core Application Entrypoint",
+        "purpose": "Main application entrypoint and initialization module in index.ts.",
+        "relationships": [
+          "root"
+        ]
+      },
+      {
+        "path": "context/AuthContext.tsx",
+        "name": "Authcontext",
+        "role": "Service & Business Logic Module",
+        "purpose": "Encapsulates core business logic, utility functions, or state management in context/AuthContext.tsx.",
+        "relationships": [
+          "context"
+        ]
+      },
+      {
+        "path": "context/NotificationContext.tsx",
+        "name": "Notificationcontext",
+        "role": "Service & Business Logic Module",
+        "purpose": "Encapsulates core business logic, utility functions, or state management in context/NotificationContext.tsx.",
+        "relationships": [
+          "context"
+        ]
+      },
+      {
+        "path": "context/ThemeContext.tsx",
+        "name": "Themecontext",
+        "role": "Service & Business Logic Module",
+        "purpose": "Encapsulates core business logic, utility functions, or state management in context/ThemeContext.tsx.",
+        "relationships": [
+          "context"
+        ]
+      },
+      {
+        "path": "services/supabase.ts",
+        "name": "Supabase",
+        "role": "Service & Business Logic Module",
+        "purpose": "Encapsulates core business logic, utility functions, or state management in services/supabase.ts.",
+        "relationships": [
+          "services"
+        ]
+      },
+      {
+        "path": "components/auth/SocialAuthButton.tsx",
+        "name": "Socialauthbutton",
+        "role": "UI Component View",
+        "purpose": "Renders visual user interface component in components/auth/SocialAuthButton.tsx.",
+        "relationships": [
+          "components/auth"
+        ]
+      },
+      {
+        "path": "components/common/AppButton.tsx",
+        "name": "Appbutton",
+        "role": "UI Component View",
+        "purpose": "Renders visual user interface component in components/common/AppButton.tsx.",
+        "relationships": [
+          "components/common"
+        ]
+      },
+      {
+        "path": "components/common/AppTextInput.tsx",
+        "name": "Apptextinput",
+        "role": "UI Component View",
+        "purpose": "Renders visual user interface component in components/common/AppTextInput.tsx.",
+        "relationships": [
+          "components/common"
+        ]
+      },
+      {
+        "path": "components/common/GradientBackground.tsx",
+        "name": "Gradientbackground",
+        "role": "UI Component View",
+        "purpose": "Renders visual user interface component in components/common/GradientBackground.tsx.",
+        "relationships": [
+          "components/common"
+        ]
+      },
+      {
+        "path": "components/common/ResourceCard.tsx",
+        "name": "Resourcecard",
+        "role": "UI Component View",
+        "purpose": "Renders visual user interface component in components/common/ResourceCard.tsx.",
+        "relationships": [
+          "components/common"
+        ]
+      },
+      {
+        "path": "components/common/SkeletonResourceCard.tsx",
+        "name": "Skeletonresourcecard",
+        "role": "UI Component View",
+        "purpose": "Renders visual user interface component in components/common/SkeletonResourceCard.tsx.",
+        "relationships": [
+          "components/common"
+        ]
+      },
+      {
+        "path": "screens/auth/ForgotPasswordScreen.tsx",
+        "name": "Forgotpasswordscreen",
+        "role": "UI Component View",
+        "purpose": "Renders visual user interface component in screens/auth/ForgotPasswordScreen.tsx.",
+        "relationships": [
+          "screens/auth"
+        ]
+      },
+      {
+        "path": "screens/auth/LoginScreen.tsx",
+        "name": "Loginscreen",
+        "role": "UI Component View",
+        "purpose": "Renders visual user interface component in screens/auth/LoginScreen.tsx.",
+        "relationships": [
+          "screens/auth"
+        ]
+      },
+      {
+        "path": "screens/auth/RegisterScreen.tsx",
+        "name": "Registerscreen",
+        "role": "UI Component View",
+        "purpose": "Renders visual user interface component in screens/auth/RegisterScreen.tsx.",
+        "relationships": [
+          "screens/auth"
+        ]
+      },
+      {
+        "path": "screens/auth/SplashScreen.tsx",
+        "name": "Splashscreen",
+        "role": "UI Component View",
+        "purpose": "Renders visual user interface component in screens/auth/SplashScreen.tsx.",
+        "relationships": [
+          "screens/auth"
+        ]
+      },
+      {
+        "path": "screens/auth/UpdatePasswordScreen.tsx",
+        "name": "Updatepasswordscreen",
+        "role": "UI Component View",
+        "purpose": "Renders visual user interface component in screens/auth/UpdatePasswordScreen.tsx.",
+        "relationships": [
+          "screens/auth"
+        ]
+      },
+      {
+        "path": "screens/chat/ChatListScreen.tsx",
+        "name": "Chatlistscreen",
+        "role": "UI Component View",
+        "purpose": "Renders visual user interface component in screens/chat/ChatListScreen.tsx.",
+        "relationships": [
+          "screens/chat"
+        ]
+      },
+      {
+        "path": "screens/chat/ChatScreen.tsx",
+        "name": "Chatscreen",
+        "role": "UI Component View",
+        "purpose": "Renders visual user interface component in screens/chat/ChatScreen.tsx.",
+        "relationships": [
+          "screens/chat"
+        ]
+      }
+    ],
+    "api_surface": [
+      "None detected"
+    ],
+    "api_surface_details": [],
+    "code_patterns": [
+      "Centralized Exception Guarding",
+      "Non-blocking Asynchronous I/O",
+      "React Hooks Component Lifecycle"
+    ],
+    "code_patterns_details": [
+      {
+        "pattern_name": "Functional State & Lifecycle Management",
+        "category": "State Management",
+        "description": "Uses React functional hooks (useState, useEffect, useContext) for local and global state handling.",
+        "source_files": [
+          "context/AuthContext.tsx",
+          "context/NotificationContext.tsx",
+          "context/ThemeContext.tsx",
+          "navigation/AppNavigator.tsx",
+          "components/common/AppTextInput.tsx",
+          "components/common/ResourceCard.tsx",
+          "components/common/SkeletonResourceCard.tsx"
+        ],
+        "reusable_approach": "Encapsulates reactive view logic inside functional components."
+      },
+      {
+        "pattern_name": "Asynchronous Non-blocking Execution",
+        "category": "Concurrency & I/O",
+        "description": "Utilizes async/await futures and non-blocking I/O operations for REST requests and database operations.",
+        "source_files": [
+          "App.tsx",
+          "index.ts",
+          "constants/theme.ts",
+          "context/AuthContext.tsx"
+        ],
+        "reusable_approach": "Prevents event-loop blocking during network and disk operations."
+      },
+      {
+        "pattern_name": "Structured Exception Guarding",
+        "category": "Error Handling",
+        "description": "Wraps external API communications and database sessions in try/except guards returning standard error payloads.",
+        "source_files": [
+          "App.tsx",
+          "index.ts",
+          "constants/theme.ts",
+          "context/AuthContext.tsx",
+          "context/NotificationContext.tsx"
+        ],
+        "reusable_approach": "Ensures clean status codes and structured diagnostic error messages."
+      }
+    ],
+    "integration_points": [
+      "None detected"
+    ],
+    "integration_points_details": [],
+    "dependencies": [],
+    "dependencies_details": [],
+    "build_deployment_config": [],
+    "database_technologies": [],
+    "external_services": [],
+    "readme_insights": {
+      "has_readme": true,
+      "summary": "A premium academic resource exchange platform built with React Native (Expo) and Supabase. Go to Supabase and create a new project. Key features include Configure Supabase, Install Dependencies, Android, Troubleshooting, and Supabase Connection Error.",
+      "sections": [
+        "EduXchange App",
+        "Prerequisites",
+        "Setup Instructions",
+        "1. Configure Supabase",
+        "2. Configure App Secrets",
+        "3. Install Dependencies",
+        "4. Run the App",
+        "Architecture"
+      ]
+    }
+  },
+  "cache_version": 4,
+  "languages": {
+    "TypeScript": 100.0
+  },
+  "file_structure": [
+    {
+      "path": "App.tsx",
+      "type": "blob"
+    },
+    {
+      "path": "README.md",
+      "type": "blob"
+    },
+    {
+      "path": "app.json",
+      "type": "blob"
+    },
+    {
+      "path": "chat_schema.sql",
+      "type": "blob"
+    },
+    {
+      "path": "enable_realtime.sql",
+      "type": "blob"
+    },
+    {
+      "path": "final_schema.sql",
+      "type": "blob"
+    },
+    {
+      "path": "index.ts",
+      "type": "blob"
+    },
+    {
+      "path": "new_schema.sql",
+      "type": "blob"
+    },
+    {
+      "path": "assets/adaptive-icon.png",
+      "type": "blob"
+    },
+    {
+      "path": "assets/favicon.png",
+      "type": "blob"
+    },
+    {
+      "path": "assets/icon.png",
+      "type": "blob"
+    },
+    {
+      "path": "assets/splash-icon.png",
+      "type": "blob"
+    },
+    {
+      "path": "constants/theme.ts",
+      "type": "blob"
+    },
+    {
+      "path": "context/AuthContext.tsx",
+      "type": "blob"
+    },
+    {
+      "path": "context/NotificationContext.tsx",
+      "type": "blob"
+    },
+    {
+      "path": "context/ThemeContext.tsx",
+      "type": "blob"
+    },
+    {
+      "path": "navigation/AppNavigator.tsx",
+      "type": "blob"
+    },
+    {
+      "path": "services/supabase.ts",
+      "type": "blob"
+    },
+    {
+      "path": "utils/fileUtils.ts",
+      "type": "blob"
+    },
+    {
+      "path": "components/auth/SocialAuthButton.tsx",
+      "type": "blob"
+    },
+    {
+      "path": "components/common/AppButton.tsx",
+      "type": "blob"
+    },
+    {
+      "path": "components/common/AppTextInput.tsx",
+      "type": "blob"
+    },
+    {
+      "path": "components/common/GradientBackground.tsx",
+      "type": "blob"
+    },
+    {
+      "path": "components/common/ResourceCard.tsx",
+      "type": "blob"
+    },
+    {
+      "path": "components/common/SkeletonResourceCard.tsx",
+      "type": "blob"
+    },
+    {
+      "path": "screens/auth/ForgotPasswordScreen.tsx",
+      "type": "blob"
+    },
+    {
+      "path": "screens/auth/LoginScreen.tsx",
+      "type": "blob"
+    },
+    {
+      "path": "screens/auth/RegisterScreen.tsx",
+      "type": "blob"
+    },
+    {
+      "path": "screens/auth/SplashScreen.tsx",
+      "type": "blob"
+    },
+    {
+      "path": "screens/auth/UpdatePasswordScreen.tsx",
+      "type": "blob"
+    },
+    {
+      "path": "screens/chat/ChatListScreen.tsx",
+      "type": "blob"
+    },
+    {
+      "path": "screens/chat/ChatScreen.tsx",
+      "type": "blob"
+    }
+  ],
+  "commits": [
+    {
+      "sha": "fc99688fe5",
+      "message": "Add files via upload",
+      "author": "23it101PopatHemangi",
+      "date": "2026-04-01T17:54:09Z"
+    },
+    {
+      "sha": "81c45e2eae",
+      "message": "Add files via upload",
+      "author": "23it101PopatHemangi",
+      "date": "2026-04-01T17:51:12Z"
+    },
+    {
+      "sha": "27d86eee00",
+      "message": "Initial commit",
+      "author": "23it101PopatHemangi",
+      "date": "2026-04-01T17:41:36Z"
+    }
+  ],
+  "total_commits": 3,
+  "branches": [],
+  "contributors": [],
+  "issues": [],
+  "pull_requests": []
+}

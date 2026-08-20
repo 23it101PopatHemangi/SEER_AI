@@ -1,14 +1,307 @@
 {
-  "last_pushed_at": "2026-07-15T11:43:31",
+  "last_pushed_at": "2026-07-15T11:43:22",
   "analysis": {
+    "overview": "A production-quality, high-performance Fruit Ninja-inspired game built using HTML5 Canvas, Phaser 3, and MediaPipe Hands. On the main menu, click or hover over the CAM: OFF button in the top-right. Key features include Mirrored Floating Viewport, Interactive Watermelon Start, Zero Asset Dependency, How to Play, Camera Controls Hands-Free, and Mouse & Touch Controls.",
     "technologies": [
-      "JavaScript"
+      "JavaScript",
+      "HTML",
+      "CSS"
     ],
-    "architecture_overview": "&bull; Description: A production-quality, high-performance Fruit Ninja-inspired game built using HTML5 Canvas, Phaser 3, and MediaPipe Hands. 1. On the main menu, click or hover over the \ud83d\udcf7 CAM: OFF button in the top-right. \n &bull; Frontend: Not detected \n &bull; Backend: Not detected \n &bull; Database: Not detected \n &bull; Main Data Flow: Not detected",
-    "key_components": [],
-    "api_surface": [],
-    "code_patterns": [],
-    "integration_points": [],
-    "dependencies": []
-  }
+    "architecture_overview": "- **Repository Purpose**: A production-quality, high-performance Fruit Ninja-inspired game built using HTML5 Canvas, Phaser 3, and MediaPipe Hands. On the main menu, click or hover over the CAM: OFF button in the top-right. Key features include Mirrored Floating Viewport, Interactive Watermelon Start, Zero Asset Dependency, How to Play, Camera Controls Hands-Free, and Mouse & Touch Controls.\n- **Frontend Tier**: Not detected\n- **Backend Tier**: Not detected\n- **Database Tier**: Not detected\n- **System Data Flow**: Not detected",
+    "key_components": [
+      "index.html (Source Code Module)",
+      "main.js (Source Code Module)",
+      "objects/Blade.js (Source Code Module)",
+      "objects/Bomb.js (Source Code Module)",
+      "objects/CameraTracking.js (Source Code Module)",
+      "objects/Fruit.js (Source Code Module)",
+      "objects/ParticleManager.js (Source Code Module)",
+      "objects/SoundEffects.js (Source Code Module)",
+      "scenes/BootScene.js (Source Code Module)",
+      "scenes/GameOverScene.js (Source Code Module)",
+      "scenes/GameScene.js (Source Code Module)",
+      "scenes/MenuScene.js (Source Code Module)",
+      "style.css (Source Code Module)"
+    ],
+    "key_components_details": [
+      {
+        "path": "index.html",
+        "name": "Index",
+        "role": "Source Code Module",
+        "purpose": "Source code implementation file in index.html.",
+        "relationships": [
+          "root"
+        ]
+      },
+      {
+        "path": "main.js",
+        "name": "Main",
+        "role": "Source Code Module",
+        "purpose": "Source code implementation file in main.js.",
+        "relationships": [
+          "root"
+        ]
+      },
+      {
+        "path": "style.css",
+        "name": "Style",
+        "role": "Source Code Module",
+        "purpose": "Source code implementation file in style.css.",
+        "relationships": [
+          "root"
+        ]
+      },
+      {
+        "path": "objects/Blade.js",
+        "name": "Blade",
+        "role": "Source Code Module",
+        "purpose": "Source code implementation file in objects/Blade.js.",
+        "relationships": [
+          "objects"
+        ]
+      },
+      {
+        "path": "objects/Bomb.js",
+        "name": "Bomb",
+        "role": "Source Code Module",
+        "purpose": "Source code implementation file in objects/Bomb.js.",
+        "relationships": [
+          "objects"
+        ]
+      },
+      {
+        "path": "objects/CameraTracking.js",
+        "name": "Cameratracking",
+        "role": "Source Code Module",
+        "purpose": "Source code implementation file in objects/CameraTracking.js.",
+        "relationships": [
+          "objects"
+        ]
+      },
+      {
+        "path": "objects/Fruit.js",
+        "name": "Fruit",
+        "role": "Source Code Module",
+        "purpose": "Source code implementation file in objects/Fruit.js.",
+        "relationships": [
+          "objects"
+        ]
+      },
+      {
+        "path": "objects/ParticleManager.js",
+        "name": "Particlemanager",
+        "role": "Source Code Module",
+        "purpose": "Source code implementation file in objects/ParticleManager.js.",
+        "relationships": [
+          "objects"
+        ]
+      },
+      {
+        "path": "objects/SoundEffects.js",
+        "name": "Soundeffects",
+        "role": "Source Code Module",
+        "purpose": "Source code implementation file in objects/SoundEffects.js.",
+        "relationships": [
+          "objects"
+        ]
+      },
+      {
+        "path": "scenes/BootScene.js",
+        "name": "Bootscene",
+        "role": "Source Code Module",
+        "purpose": "Source code implementation file in scenes/BootScene.js.",
+        "relationships": [
+          "scenes"
+        ]
+      },
+      {
+        "path": "scenes/GameOverScene.js",
+        "name": "Gameoverscene",
+        "role": "Source Code Module",
+        "purpose": "Source code implementation file in scenes/GameOverScene.js.",
+        "relationships": [
+          "scenes"
+        ]
+      },
+      {
+        "path": "scenes/GameScene.js",
+        "name": "Gamescene",
+        "role": "Source Code Module",
+        "purpose": "Source code implementation file in scenes/GameScene.js.",
+        "relationships": [
+          "scenes"
+        ]
+      },
+      {
+        "path": "scenes/MenuScene.js",
+        "name": "Menuscene",
+        "role": "Source Code Module",
+        "purpose": "Source code implementation file in scenes/MenuScene.js.",
+        "relationships": [
+          "scenes"
+        ]
+      }
+    ],
+    "api_surface": [
+      "None detected"
+    ],
+    "api_surface_details": [],
+    "code_patterns": [
+      "Centralized Exception Guarding",
+      "Non-blocking Asynchronous I/O"
+    ],
+    "code_patterns_details": [
+      {
+        "pattern_name": "Asynchronous Non-blocking Execution",
+        "category": "Concurrency & I/O",
+        "description": "Utilizes async/await futures and non-blocking I/O operations for REST requests and database operations.",
+        "source_files": [
+          "main.js",
+          "objects/Blade.js",
+          "objects/Bomb.js",
+          "objects/CameraTracking.js"
+        ],
+        "reusable_approach": "Prevents event-loop blocking during network and disk operations."
+      },
+      {
+        "pattern_name": "Structured Exception Guarding",
+        "category": "Error Handling",
+        "description": "Wraps external API communications and database sessions in try/except guards returning standard error payloads.",
+        "source_files": [
+          "main.js",
+          "objects/Blade.js",
+          "objects/Bomb.js",
+          "objects/CameraTracking.js",
+          "objects/Fruit.js"
+        ],
+        "reusable_approach": "Ensures clean status codes and structured diagnostic error messages."
+      }
+    ],
+    "integration_points": [
+      "None detected"
+    ],
+    "integration_points_details": [],
+    "dependencies": [],
+    "dependencies_details": [],
+    "build_deployment_config": [],
+    "database_technologies": [],
+    "external_services": [],
+    "readme_insights": {
+      "has_readme": true,
+      "summary": "A production-quality, high-performance Fruit Ninja-inspired game built using HTML5 Canvas, Phaser 3, and MediaPipe Hands. On the main menu, click or hover over the CAM: OFF button in the top-right. Key features include Mirrored Floating Viewport, Interactive Watermelon Start, Zero Asset Dependency, How to Play, Camera Controls Hands-Free, and Mouse & Touch Controls.",
+      "sections": [
+        "\ud83c\udf1f Key Features",
+        "\ud83c\udfae How to Play",
+        "\ud83d\udcf7 Camera Controls (Hands-Free)",
+        "\ud83d\uddb1\ufe0f Mouse & Touch Controls",
+        "\ud83d\udcdc Gameplay Rules",
+        "\u2744\ufe0f Special Power-Ups",
+        "\ud83d\udcc1 Folder Structure",
+        "\ud83d\udee0\ufe0f Project Setup & How to Run"
+      ]
+    }
+  },
+  "cache_version": 4,
+  "languages": {
+    "JavaScript": 93.3,
+    "HTML": 3.7,
+    "CSS": 3.0
+  },
+  "file_structure": [
+    {
+      "path": ".gitignore",
+      "type": "blob"
+    },
+    {
+      "path": "README.md",
+      "type": "blob"
+    },
+    {
+      "path": "index.html",
+      "type": "blob"
+    },
+    {
+      "path": "main.js",
+      "type": "blob"
+    },
+    {
+      "path": "style.css",
+      "type": "blob"
+    },
+    {
+      "path": "objects/Blade.js",
+      "type": "blob"
+    },
+    {
+      "path": "objects/Bomb.js",
+      "type": "blob"
+    },
+    {
+      "path": "objects/CameraTracking.js",
+      "type": "blob"
+    },
+    {
+      "path": "objects/Fruit.js",
+      "type": "blob"
+    },
+    {
+      "path": "objects/ParticleManager.js",
+      "type": "blob"
+    },
+    {
+      "path": "objects/SoundEffects.js",
+      "type": "blob"
+    },
+    {
+      "path": "scenes/BootScene.js",
+      "type": "blob"
+    },
+    {
+      "path": "scenes/GameOverScene.js",
+      "type": "blob"
+    },
+    {
+      "path": "scenes/GameScene.js",
+      "type": "blob"
+    },
+    {
+      "path": "scenes/MenuScene.js",
+      "type": "blob"
+    },
+    {
+      "path": "assets/fruits/.gitkeep",
+      "type": "blob"
+    },
+    {
+      "path": "assets/particles/.gitkeep",
+      "type": "blob"
+    },
+    {
+      "path": "assets/sounds/.gitkeep",
+      "type": "blob"
+    },
+    {
+      "path": "assets/ui/.gitkeep",
+      "type": "blob"
+    }
+  ],
+  "commits": [
+    {
+      "sha": "9de65edbd7",
+      "message": "Docs: Update README to highlight webcam hand-tracking",
+      "author": "23it101PopatHemangi",
+      "date": "2026-07-15T11:43:22Z"
+    },
+    {
+      "sha": "ee7b93a66c",
+      "message": "Initial commit: Phaser 3 Fruit Ninja with webcam tracking",
+      "author": "23it101PopatHemangi",
+      "date": "2026-07-15T11:26:18Z"
+    }
+  ],
+  "total_commits": 2,
+  "branches": [],
+  "contributors": [],
+  "issues": [],
+  "pull_requests": []
 }

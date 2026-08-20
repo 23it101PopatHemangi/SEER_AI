@@ -9,13 +9,15 @@ from database import get_db, UserToken
 
 router = APIRouter(prefix="/api/github", tags=["GitHub OAuth"])
 
-# Load credentials
-CLIENT_ID = os.getenv("GITHUB_CLIENT_ID", "").strip()
-CLIENT_SECRET = os.getenv("GITHUB_CLIENT_SECRET", "").strip()
-REDIRECT_URI = os.getenv("GITHUB_REDIRECT_URI", "http://localhost:8000/api/github/callback").strip()
+def get_credentials():
+    client_id = os.getenv("GITHUB_CLIENT_ID", "").strip()
+    client_secret = os.getenv("GITHUB_CLIENT_SECRET", "").strip()
+    redirect_uri = os.getenv("GITHUB_REDIRECT_URI", "http://localhost:8000/api/github/callback").strip()
+    return client_id, client_secret, redirect_uri
 
 def check_credentials():
-    if not CLIENT_ID or not CLIENT_SECRET:
+    client_id, client_secret, _ = get_credentials()
+    if not client_id or not client_secret:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="GitHub Client credentials are not configured on the server. Please define GITHUB_CLIENT_ID and GITHUB_CLIENT_SECRET in backend/.env"
@@ -31,6 +33,7 @@ def get_auth_url(
     A unique nonce is appended to state so GitHub treats each request as fresh.
     """
     check_credentials()
+    client_id, _, redirect_uri = get_credentials()
     
     import secrets
     nonce = secrets.token_hex(8)
@@ -38,14 +41,12 @@ def get_auth_url(
     # State encodes user_email, project_id, and a nonce for uniqueness
     state = f"{user_email}:{project_id}:{nonce}"
     encoded_state = urllib.parse.quote(state)
-    encoded_redirect = urllib.parse.quote(REDIRECT_URI)
+    encoded_redirect = urllib.parse.quote(redirect_uri)
     
     # Build the authorization URL.
-    # NOTE: GitHub does not support prompt=consent. The consent screen is only shown
-    # when the app grant has been fully deleted (via DELETE /applications/{id}/grant).
     auth_url = (
         f"https://github.com/login/oauth/authorize"
-        f"?client_id={CLIENT_ID}"
+        f"?client_id={client_id}"
         f"&redirect_uri={encoded_redirect}"
         f"&scope=repo"
         f"&state={encoded_state}"
@@ -92,14 +93,15 @@ def oauth_callback(
         )
 
     check_credentials()
+    client_id, client_secret, redirect_uri = get_credentials()
 
     # 3. Exchange code for access token
     token_url = "https://github.com/login/oauth/access_token"
     payload = {
-        "client_id": CLIENT_ID,
-        "client_secret": CLIENT_SECRET,
+        "client_id": client_id,
+        "client_secret": client_secret,
         "code": code,
-        "redirect_uri": REDIRECT_URI
+        "redirect_uri": redirect_uri
     }
     headers = {"Accept": "application/json"}
     
@@ -210,7 +212,6 @@ def get_connection_status(
         # Filter and normalize repository details
         repositories = []
         for r in raw_repos:
-            # We skip forks or only include owned repos? Let's return all repos, user can connect any!
             repositories.append({
                 "name": r.get("name"),
                 "full_name": r.get("full_name"),
@@ -251,21 +252,17 @@ def disconnect_github(
 
     db_token = db.query(UserToken).filter(UserToken.user_email == email).first()
     if db_token:
-        # Step 1: Delete the entire OAuth GRANT at GitHub's API level
-        # Using /grant (not /token) removes the app from the user's "Authorized OAuth Apps"
-        # This forces GitHub to show the full authorization/consent screen on reconnect.
-        # Using /token only would still allow GitHub to silently re-approve.
-        if CLIENT_ID and CLIENT_SECRET and db_token.github_access_token:
+        client_id, client_secret, _ = get_credentials()
+        if client_id and client_secret and db_token.github_access_token:
             try:
-                grant_url = f"https://api.github.com/applications/{CLIENT_ID}/grant"
+                grant_url = f"https://api.github.com/applications/{client_id}/grant"
                 revoke_res = requests.delete(
                     grant_url,
-                    auth=(CLIENT_ID, CLIENT_SECRET),
+                    auth=(client_id, client_secret),
                     json={"access_token": db_token.github_access_token},
                     headers={"Accept": "application/vnd.github+json"},
                     timeout=10
                 )
-                # 204 = grant deleted successfully, 404 = already gone — both acceptable
                 print(f"GitHub grant revoke status: {revoke_res.status_code}")
             except Exception as e:
                 print(f"Warning: GitHub grant revocation request failed: {e}")
@@ -275,3 +272,4 @@ def disconnect_github(
         db.commit()
 
     return {"status": "disconnected"}
+
